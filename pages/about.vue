@@ -2,10 +2,13 @@
     <div>
         This page is about me!
     </div>
+    <!-- <div>
+    <button @click="enableCustomLayout">Update layout</button>
+    </div> -->
 </template>
 
-<script>
-DefinePageMeta({
-    layout: "another",
-});
+<script setup>
+useHead({
+    title: "About"
+})
 </script>
