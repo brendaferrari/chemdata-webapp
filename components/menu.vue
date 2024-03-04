@@ -1,5 +1,12 @@
 <template>
+    <!-- <nav class="font-mono"> -->
     <nav class="font-mono">
+        <!-- <div class="md:hidden" @click>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </div> -->
+
         <ul class="flex flex-col md:flex-row md:space-x-4">
             <li>
                 <NuxtLink to="/" class="link">Main</NuxtLink>
@@ -19,6 +26,6 @@
 
 <style scoped>
 .link {
-    @apply p-1 hover:bg-gray-200 dark:hover:bg-gray-800 text-2xl md:text-base
+    @apply justify-center p-2 hover:bg-gray-200 dark:hover:bg-gray-800 text-2xl md:text-base
 }
 </style>
