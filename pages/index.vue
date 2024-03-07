@@ -1,27 +1,52 @@
 <template>
   <div class="grid grid-rows-3">
     <div class="bg-violet-100 h-screen">
-      <div class="p-10">
+      <div class="p-6">
         <img class="mx-auto rounded-full w-96 h-96" src="\images\profile.png">
       </div>
-      <div class="flex justify-center text-4xl">
+      <div class="flex justify-center text-5xl dancing-script-font">
         Hello! I am Brenda Ferrari
       </div>
       <div class="flex justify-center p-2 text-xl">
         DSc in Chemistry | Drug Development | Artificial Inteligence | Organic Synthesis
       </div>
-      <div class="flex justify-center p-10 gap-4">
+      <div class="flex justify-center p-8 gap-1">
         <!-- https://flowbite.com/docs/typography/links/ -->
-        <a href="https://github.com/brendaferrari" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">GitHub</a>
-        <a href="https://www.linkedin.com/in/brenda-ferrari-b04bb2b4/" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">LinkedIn</a>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
+        <a href="https://github.com/brendaferrari" target="_blank">
+            <button class="bg-black hover:bg-slate-800 rounded-lg text-white text-s text-center self-center px-3 py-2 my-2 mx-2 "><i class="fab fa-github mr-1"></i> GitHub</button>
+        </a>
+        <a href="https://www.linkedin.com/in/brenda-ferrari-b04bb2b4/" target="_blank">
+            <button class="bg-blue-800 hover:bg-blue-700 rounded-lg text-white text-s text-center self-center px-3 py-2 my-2 mx-2 "><i class="fab fa-linkedin mr-1"></i> LinkedIn</button>
+        </a>
+        <a href="https://orcid.org/0000-0001-5609-0947" target="_blank">
+            <button class="bg-lime-600 hover:bg-lime-500 rounded-lg text-white text-s text-center self-center px-3 py-2 my-2 mx-2 "><i class="fab fa-orcid mr-1"></i> ORCID</button>
+        </a>
       </div>
-      
+      <div class="flex justify-center">
+        <!-- <FontAwesomeIcon icon={faEnvelope} class="h-10 w-10"  /> -->
+        <ChevronDoubleDownIcon class="animate-bounce h-10 w-10 mt-2 md:flex" />
+      </div>
     </div>
-    <div class="bg-violet-200 h-screen">This is my work!</div>
+
+    <div class="bg-violet-200 h-screen flex flex-col">
+      <div class="flex justify-center text-5xl mt-20 dancing-script-font">
+        <span>About me</span>
+      </div>
+      <div class="box-content bg-violet-400 rounded-full mt-2 h-2 w-16 self-center"></div>
+    </div>
+
     <div class="bg-violet-100 h-screen">This is my work!</div>
   </div>
   <!-- <article class="prose dark:prose-invert max-w-none">
       <ContentDoc path="/" />
   </article> -->
 </template>
+
+<script setup>
+import { ChevronDoubleDownIcon } from '@heroicons/vue/24/outline'
+
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+</script>
