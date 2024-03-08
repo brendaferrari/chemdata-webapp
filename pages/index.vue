@@ -25,12 +25,14 @@
         </a>
       </div>
       <div class="flex justify-center">
-        <!-- <FontAwesomeIcon icon={faEnvelope} class="h-10 w-10"  /> -->
-        <ChevronDoubleDownIcon class="animate-bounce h-10 w-10 mt-2 md:flex" />
+        <button type="button" onclick="smoothScroll(document.getElementById('second'))"> 
+          <ChevronDoubleDownIcon class="animate-bounce h-10 w-10 mt-2 md:flex" />
+        </button>
+          
       </div>
     </div>
 
-    <div class="bg-violet-200 h-screen flex flex-col">
+    <div class="second bg-violet-200 h-screen flex flex-col" id="second">
       <div class="flex justify-center text-5xl mt-20 dancing-script-font">
         <span>About me</span>
       </div>
@@ -47,6 +49,28 @@
 <script setup>
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/outline'
 
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-// import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+// https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
 </script>
