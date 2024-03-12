@@ -57,8 +57,8 @@
       </div>
     </div>
 
-    <div class="flex justify-between second bg-violet-200" id="second">
-      <div class="about-me">
+    <div class="flex second h-screen bg-violet-200" id="second">
+      <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
         <div class="flex justify-start dancing-script-font text-5xl">
           <h3>About me</h3>
         </div>
@@ -71,18 +71,37 @@
         >
       </div>
 
-      <div class="flex flex-col items-center px-12 py-12">
-        <h3 class="text-3xl md:text-5xl dark:text-white font-bold">Skills</h3>
+      <div class="flex flex-col items-center basis-3/5 px-12 py-12">
+        <h3 class="text-3xl md:text-5xl dark:text-white dancing-script-font">
+          Skills
+        </h3>
         <div class="flex">
           <div>
-            <ProgressBar />
-            <ProgressBar />
-            <ProgressBar />
+            <h4 class="flex justify-end p-4">Chemistry</h4>
+            <ProgressBarReversed />
+            <ProgressBarReversed />
+            <ProgressBarReversed />
+            <ProgressBarReversed />
+            <ProgressBarReversed />
           </div>
+          <!-- <div>
+            <h4 class="p-4">Computation</h4>
+            <ProgressBar :percentage="0" />
+            <ProgressBar :percentage="25" />
+            <ProgressBar :percentage="50" />
+            <ProgressBar :percentage="75" />
+            <ProgressBar :percentage="100" />
+          </div> -->
           <div>
-            <ProgressBar />
-            <ProgressBar />
-            <ProgressBar />
+            <h4 class="p-4">Computation</h4>
+            <div v-for="(skill, index) in skills" :key="index">
+              <ProgressBar :percentage="skill.percentage" :name="skill.name" />
+            </div>
+            <!-- <ProgressBar :percentage="0" />
+            <ProgressBar :percentage="25" />
+            <ProgressBar :percentage="50" />
+            <ProgressBar :percentage="75" />
+            <ProgressBar :percentage="100" /> -->
           </div>
         </div>
       </div>
@@ -97,6 +116,29 @@
 
 <script setup>
 import { ChevronDoubleDownIcon } from "@heroicons/vue/24/outline";
+
+const skills = ref([
+  {
+    percentage: 0,
+    name: "modelling",
+  },
+  {
+    percentage: 25,
+    name: "cat",
+  },
+  {
+    percentage: 50,
+    name: "cat",
+  },
+  {
+    percentage: 75,
+    name: "cat",
+  },
+  {
+    percentage: 100,
+    name: "cat",
+  },
+]);
 
 // https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click
 window.smoothScroll = function (target) {
