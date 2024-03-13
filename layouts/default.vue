@@ -32,10 +32,12 @@
     <main class="">
       <slot />
     </main>
-    <!-- 
-        <footer class="flex justify-between items-start md:items-center mt-5 bg-default border-b-2 p-2 border-gray-200 dark:bg-dark">
-            <div>This is footer</div>
-        </footer> -->
+
+    <footer
+      class="flex justify-between items-start md:items-center mt-5 bg-default border-b-2 p-2 border-gray-200 dark:bg-dark"
+    >
+      <div>This is footer</div>
+    </footer>
   </div>
 </template>
 
