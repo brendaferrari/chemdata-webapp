@@ -34,7 +34,7 @@
     </main>
 
     <footer
-      class="flex justify-between items-start md:items-center mt-5 bg-default border-b-2 p-2 border-gray-200 dark:bg-dark"
+      class="flex justify-between size-28 items-start md:items-center mt-5 bg-default border-b-2 p-2 border-gray-200 dark:bg-dark"
     >
       <div>This is footer</div>
     </footer>

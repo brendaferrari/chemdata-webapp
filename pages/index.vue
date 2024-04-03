@@ -90,7 +90,7 @@
               </div>
             </div>
             <div>
-              <h4 class="p-4 font-bold">Computation</h4>
+              <h4 class="flex justify-start p-4 font-bold">Computation</h4>
               <div v-for="(skill, index) in skills" :key="index">
                 <ProgressBar
                   :percentage="skill.percentage"
@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <div class="bg-violet-100 p-8 h-screen">
+      <div class="flex flex-col bg-violet-100 p-8 h-screen">
         <h3
           class="flex justify-center dancing-script-font text-5xl px-12 py-12"
         >
@@ -118,12 +118,14 @@
           </div>
         </div>
 
-        <div
-          class="flex justify-center bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-72 rounded-lg mt-6 hover:shadow-black/70"
-        >
-          <NuxtLink class="justify-center" to="/projects"
-            >click here to check other Projects...</NuxtLink
+        <div class="flex justify-center p-4">
+          <div
+            class="bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-72 rounded-lg mt-6 hover:shadow-black/70"
           >
+            <NuxtLink to="/projects"
+              >click here to check other Projects...</NuxtLink
+            >
+          </div>
         </div>
       </div>
     </div>

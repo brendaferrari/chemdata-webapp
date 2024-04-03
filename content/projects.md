@@ -1,4 +1,3 @@
-# Projects
+# My GitHub projects
 
-Check out some projects
 ::project-list
