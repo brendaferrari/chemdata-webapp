@@ -1,6 +1,8 @@
 <template>
   <div class="p-2 mt-2 w-72">
-    <span class="flex justify-end">{{ name }}</span>
+    <span class="flex justify-end not-prose dark:text-zinc-800">{{
+      name
+    }}</span>
     <div
       class="flex justify-end w-full bg-gray-200 rounded-full dark:bg-gray-700"
     >

@@ -1,17 +1,21 @@
 <template>
   <div>
     <div class="flex flex-col">
-      <div class="bg-violet-100 h-screen">
+      <div class="bg-violet-300 h-screen">
         <div class="p-6">
           <img
             class="mx-auto rounded-full w-96 h-96"
             src="~/assets/images/profile.png"
           />
         </div>
-        <div class="flex justify-center text-5xl dancing-script-font">
+        <div
+          class="flex justify-center text-5xl dancing-script-font not-prose dark:text-zinc-800"
+        >
           <p>Hello! I am Brenda Ferrari</p>
         </div>
-        <div class="flex justify-center p-2 text-xl">
+        <div
+          class="flex justify-center p-2 text-xl not-prose dark:text-zinc-800"
+        >
           <p>
             DSc in Chemistry | Cheminformatician | Artificial Inteligence |
             Computational Chemistry
@@ -63,11 +67,13 @@
 
       <div class="flex second h-screen bg-violet-200 p-6" id="second">
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
-          <div class="flex justify-start dancing-script-font text-5xl">
+          <div
+            class="flex justify-start dancing-script-font text-5xl not-prose dark:text-zinc-800"
+          >
             <h3>About me</h3>
           </div>
           <div class="box-content bg-violet-400 rounded-full h-2 w-16"></div>
-          <span class="text-justify"
+          <span class="text-justify not-prose dark:text-zinc-800"
             >My name is Brenda Ferrari and I am chemistry PhD student working on
             my bio/cheminformatics skills. I write codes and blog posts to share
             concepts I have learned! If you're interested to learn with my codes
@@ -76,12 +82,18 @@
         </div>
 
         <div class="flex flex-col items-center basis-3/5 px-12 py-12">
-          <h3 class="text-3xl md:text-5xl dark:text-white dancing-script-font">
+          <h3
+            class="text-3xl md:text-5xl dancing-script-font not-prose dark:text-zinc-800"
+          >
             Skills
           </h3>
           <div class="flex">
             <div>
-              <h4 class="flex justify-end p-4 font-bold">Chemistry</h4>
+              <h4
+                class="flex justify-end p-4 font-bold not-prose dark:text-zinc-800"
+              >
+                Chemistry
+              </h4>
               <div v-for="(skill, index) in skillsReversed" :key="index">
                 <ProgressBarReversed
                   :percentage="skill.percentage"
@@ -90,7 +102,11 @@
               </div>
             </div>
             <div>
-              <h4 class="flex justify-start p-4 font-bold">Computation</h4>
+              <h4
+                class="flex justify-start p-4 font-bold not-prose dark:text-zinc-800"
+              >
+                Computation
+              </h4>
               <div v-for="(skill, index) in skills" :key="index">
                 <ProgressBar
                   :percentage="skill.percentage"
@@ -102,13 +118,15 @@
         </div>
       </div>
 
-      <div class="flex flex-col bg-violet-100 p-8 h-screen">
+      <div class="flex flex-col bg-violet-300 p-8 h-screen">
         <h3
-          class="flex justify-center dancing-script-font text-5xl px-12 py-12"
+          class="flex justify-center dancing-script-font text-5xl px-12 py-12 not-prose dark:text-zinc-800"
         >
           Projects
         </h3>
-        <div class="flex justify-center space-x-4 p-4">
+        <div
+          class="flex justify-center space-x-4 p-4 not-prose dark:text-zinc-800"
+        >
           <div v-for="(projects, index) in projectNames" :key="index">
             <ProjectBox
               :name="projects.name"
@@ -120,7 +138,7 @@
 
         <div class="flex justify-center p-4">
           <div
-            class="bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-72 rounded-lg mt-6 hover:shadow-black/70"
+            class="bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-72 rounded-lg mt-6 hover:shadow-black/70 not-prose dark:text-zinc-800"
           >
             <NuxtLink to="/projects"
               >click here to check other Projects...</NuxtLink
