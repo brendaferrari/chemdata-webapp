@@ -22,7 +22,6 @@
         <Menu />
       </div>
       <div class="pl-72">
-        <!-- BUG: dark mode not working -->
         <ClientOnly>
           <ColorModeSelector />
         </ClientOnly>
