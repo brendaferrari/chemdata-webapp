@@ -65,19 +65,27 @@
         </div>
       </div>
 
-      <div class="flex second h-screen bg-violet-200 p-6" id="second">
+      <div class="flex second h-screen bg-violet-200 p-4" id="second">
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
           <div
             class="flex justify-start dancing-script-font text-5xl not-prose dark:text-zinc-800"
           >
             <h3>About me</h3>
           </div>
+          <div>
+            <img class="rounded w-auto h-44" src="~/assets/images/me.jpg" />
+          </div>
           <div class="box-content bg-violet-400 rounded-full h-2 w-16"></div>
           <span class="text-justify not-prose dark:text-zinc-800"
-            >My name is Brenda Ferrari and I am chemistry PhD student working on
-            my bio/cheminformatics skills. I write codes and blog posts to share
+            >My name is Brenda Ferrari and I am very curious person with a
+            passion to learn! I have a DSc and a MSc in Chemistry: The first
+            focused on Organic Synthesis/Drug Design and the second on
+            Computational Chemistry/Drug Design. Now I am adventuring myself on
+            the world of front-end/back-end by creating this website with the
+            possibility to run the scripts and software I am developing. I
+            usually write codes related to my research and blog posts to share
             concepts I have learned! If you're interested to learn with my codes
-            feel free to explore!</span
+            please feel free to explore!</span
           >
         </div>
 
@@ -158,20 +166,20 @@ import { ChevronDoubleDownIcon } from "@heroicons/vue/24/outline";
 
 const skills = ref([
   {
-    percentage: 0,
-    name: "modelling",
-  },
-  {
-    percentage: 25,
-    name: "cat",
-  },
-  {
-    percentage: 50,
-    name: "cat",
+    percentage: 80,
+    name: "Python",
   },
   {
     percentage: 75,
-    name: "cat",
+    name: "Machine Learning",
+  },
+  {
+    percentage: 85,
+    name: "Data Analysis",
+  },
+  {
+    percentage: 55,
+    name: "Deep Learning",
   },
   {
     percentage: 100,
@@ -181,12 +189,12 @@ const skills = ref([
 
 const skillsReversed = ref([
   {
-    percentage: 0,
-    name: "dog",
+    percentage: 85,
+    name: "Homology Modeling",
   },
   {
-    percentage: 25,
-    name: "cat",
+    percentage: 90,
+    name: "Molecular Dynamics",
   },
   {
     percentage: 50,
