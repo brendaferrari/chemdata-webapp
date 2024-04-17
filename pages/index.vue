@@ -66,7 +66,7 @@
       </div>
 
       <div
-        class="flex flex-col second h-screen bg-violet-200 p-4 lg:flex-row h-fit"
+        class="flex flex-col second h-fit bg-violet-200 p-4 lg:flex-row lg:h-screen"
         id="second"
       >
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
@@ -79,17 +79,18 @@
             <img class="rounded w-auto h-44" src="~/assets/images/me.jpg" />
           </div>
           <div class="box-content bg-violet-400 rounded-full h-2 w-16"></div>
-          <span class="text-justify not-prose dark:text-zinc-800"
-            >My name is Brenda Ferrari and I am very curious person with a
-            passion to learn! I have a DSc and a MSc in Chemistry: The first
-            focused on Organic Synthesis/Drug Design and the second on
-            Computational Chemistry/Drug Design. Now I am adventuring myself on
-            the world of front-end/back-end by creating this website with the
-            possibility to run the scripts and software I am developing. I
-            usually write codes related to my research and blog posts to share
-            concepts I have learned! If you're interested to learn with my codes
-            please feel free to explore!</span
-          >
+          <span class="text-justify not-prose dark:text-zinc-800">
+            My name is Brenda Ferrari and I am a Postdoctoral Reseacher at the
+            Computational Nanoscience group at Nanoscience Center on the
+            University of Jyväskylä (Jyväskylä, Finland). I will work on a
+            project where ligand-stabilized metal nanoclusters are studied as
+            sensors for chiral biomolecules in aqueous solvents. I am also I am
+            adventuring myself on the world of front-end/back-end by creating
+            this website with the possibility to run the scripts and software I
+            am developing. I usually write codes related to my research and blog
+            posts to share concepts I have learned! If you're interested to
+            learn with my codes please feel free to explore!
+          </span>
         </div>
 
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
@@ -129,15 +130,13 @@
         </div>
       </div>
 
-      <div class="flex flex-col bg-violet-300 p-8 h-screen">
+      <div class="flex flex-col bg-violet-300 p-8 h-fit lg:h-screen">
         <h3
           class="flex justify-center dancing-script-font text-5xl px-12 py-12 not-prose dark:text-zinc-800"
         >
           Projects
         </h3>
-        <div
-          class="flex justify-center space-x-4 p-4 not-prose dark:text-zinc-800"
-        >
+        <div class="flex flex-wrap justify-center not-prose dark:text-zinc-800">
           <div v-for="(projects, index) in projectNames" :key="index">
             <ProjectBox
               :name="projects.name"
