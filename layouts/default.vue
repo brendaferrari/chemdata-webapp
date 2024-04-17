@@ -32,16 +32,34 @@
       <slot />
     </main>
 
-    <footer
-      class="flex justify-between size-28 items-start md:items-center mt-5 bg-default border-b-2 p-2 border-gray-200 dark:bg-dark"
+    <div
+      class="flex w-full items-center size-56 m-5 p-4 bg-default dark:bg-dark"
     >
-      <div>This is footer</div>
-    </footer>
+      <div class="flex">
+        <div class="flex flex-col items-center">
+          <MapPinIcon class="flex h-24 w-24 p-2" />
+          <span class="flex">WHERE TO FIND ME?</span>
+          <span class="flex">Nanoscience Center </span>
+          <span class="flex">University of Jyväskylä</span>
+          <span class="flex">Jyväskylä, Finland</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <EnvelopeIcon class="flex h-24 w-24 p-2" />
+          <span class="flex">EMAIL ME</span>
+          <span class="flex">brendafferrari@gmail.com</span>
+        </div>
+        <div class="flex">
+          © Copyright Ferrari 2024 | Design by Brenda Ferrari
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { BeakerIcon } from "@heroicons/vue/24/outline";
+import { MapPinIcon } from "@heroicons/vue/24/solid";
+import { EnvelopeIcon } from "@heroicons/vue/24/solid";
 
 useHead({
   titleTemplate: "%s - ChemData",
