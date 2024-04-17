@@ -9,12 +9,12 @@
           />
         </div>
         <div
-          class="flex justify-center text-5xl dancing-script-font not-prose dark:text-zinc-800"
+          class="flex justify-center text-4xl dancing-script-font sm:text-5xl dark:text-zinc-800"
         >
           <p>Hello! I am Brenda Ferrari</p>
         </div>
         <div
-          class="flex justify-center p-2 text-xl not-prose dark:text-zinc-800"
+          class="flex justify-center p-2 text-lg sm:text-xl dark:text-zinc-800"
         >
           <p>
             DSc in Chemistry | Cheminformatician | Artificial Inteligence |
@@ -59,16 +59,19 @@
             onclick="smoothScroll(document.getElementById('second'))"
           >
             <ChevronDoubleDownIcon
-              class="hover:bg-gray-200 dark:hover:bg-gray-800 animate-bounce h-10 w-10 mt-2 md:flex"
+              class="hover:bg-gray-300 rounded dark:hover:bg-gray-800 animate-bounce h-10 w-10 mt-2 md:flex"
             />
           </button>
         </div>
       </div>
 
-      <div class="flex second h-screen bg-violet-200 p-4" id="second">
+      <div
+        class="flex flex-col second h-screen bg-violet-200 p-4 lg:flex-row h-fit"
+        id="second"
+      >
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
           <div
-            class="flex justify-start dancing-script-font text-5xl not-prose dark:text-zinc-800"
+            class="flex justify-start dancing-script-font text-3xl md:text-5xl sm:text-4xl dark:text-zinc-800"
           >
             <h3>About me</h3>
           </div>
@@ -89,13 +92,13 @@
           >
         </div>
 
-        <div class="flex flex-col items-center basis-3/5 px-12 py-12">
+        <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
           <h3
             class="text-3xl md:text-5xl dancing-script-font not-prose dark:text-zinc-800"
           >
             Skills
           </h3>
-          <div class="flex">
+          <div class="flex items-center">
             <div>
               <h4
                 class="flex justify-end p-4 font-bold not-prose dark:text-zinc-800"
