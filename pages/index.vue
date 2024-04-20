@@ -80,8 +80,8 @@
           </div>
           <div class="box-content bg-violet-400 rounded-full h-2 w-16"></div>
           <span class="text-justify not-prose dark:text-zinc-800">
-            My name is Brenda Ferrari and I am a Postdoctoral Reseacher at the
-            Computational Nanoscience group at Nanoscience Center on the
+            My name is Brenda Ferrari and I will be a Postdoctoral Reseacher at
+            the Computational Nanoscience group at Nanoscience Center on the
             University of Jyväskylä (Jyväskylä, Finland). I will work on a
             project where ligand-stabilized metal nanoclusters are studied as
             sensors for chiral biomolecules in aqueous solvents. I am also I am

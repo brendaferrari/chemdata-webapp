@@ -1,13 +1,17 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col dark:non-prose">
     <div class="bg-violet-200 h-fit">
       <h3
-        class="flex justify-center p-4 dancing-script-font text-3xl md:text-5xl sm:text-4xl"
+        class="flex justify-center p-8 mt-8 dancing-script-font text-3xl md:text-5xl sm:text-4xl"
       >
-        My carrer
+        My career
       </h3>
-      <h3 class="flex justify-center text-lg m-8">Work Experience</h3>
-      <div class="flex flex-col m-8 max-w-3xl space-y-10">
+      <div class="flex flex-col justify-center m-8 max-w-3xl space-y-10">
+        <h3
+          class="flex justify-center text-xl text-violet-500 font-semibold tracking-wide antialiased"
+        >
+          Work Experience
+        </h3>
         <div class="flex space-x-8">
           <div class="flex flex-col min-w-56">
             <span class="text-2xl text-end">Postdoctoral Researcher</span>
@@ -16,7 +20,7 @@
           </div>
           <div class="flex size-12">
             <div
-              class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+              class="after:block after:bg-black after:w-[1px] after:h-dvh after:mx-auto"
             >
               <div
                 class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
@@ -27,16 +31,18 @@
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start">University of Jyväskylä</span>
-            <span class="text-start">Supervisor: Hannu Häkkinen</span>
+            <span class="text-start"
+              >Supervisor:
+              <a
+                class="link-color"
+                href="https://www.jyu.fi/en/people/hannu-hakkinen"
+                >Prof. Dr. Hannu Häkkinen</a
+              >
+            </span>
             <span class="text-justify"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</span
+              >Project will be related to the study of ligand-stabilized metal
+              nanoclusters as sensors for chiral biomolecules in aqueous
+              solvents.</span
             >
           </div>
         </div>
@@ -49,7 +55,7 @@
           </div>
           <div class="flex size-12">
             <div
-              class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+              class="after:block after:bg-black after:w-[1px] after:h-dvh after:mx-auto"
             >
               <div
                 class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
@@ -61,19 +67,30 @@
           <div class="flex flex-col">
             <span class="text-2xl text-start">IBM Research Brazil</span>
             <span class="text-start"
-              >Manager: Mathias Steiner, Advisor: Ronaldo Giro</span
-            >
+              >Manager:
+              <a
+                class="link-color"
+                href="https://research.ibm.com/people/mathias-steiner"
+                >Dr. Mathias Steiner</a
+              >, Advisor:
+              <a
+                class="link-color"
+                href="https://scholar.google.com/citations?user=VvSVNwQAAAAJ&hl=en"
+                >Dr. Ronaldo Giro</a
+              >
+            </span>
             <span class="text-justify"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Id
-              donec ultrices tincidunt arcu. Et odio pellentesque diam volutpat
-              commodo sed egestas egestas fringilla. Aliquam faucibus purus in
-              massa tempor nec feugiat nisl pretium. Nulla pharetra diam sit
-              amet nisl suscipit adipiscing bibendum. Nisl pretium fusce id
-              velit. Purus sit amet luctus venenatis lectus. Et tortor consequat
-              id porta nibh venenatis cras sed felis. Sed pulvinar proin gravida
-              hendrerit lectus. Vestibulum mattis ullamcorper velit sed
-              ullamcorper morbi tincidunt ornare.</span
+              >Research using Data Science and Cheminformatics techniques
+              focusing on the field of carbon capture, aiming to enhance CO2
+              separation and sequestration in nanoscale. Implemented Data Mining
+              and Software Development as a solution of problems related to CO2
+              separation. As a product of this work, a Deep Learning model was
+              trained to predict polymerisation reactions and retrosynthesis
+              with forward model Top-4 accuracy of 80% and a backward model
+              Top-4 accuracy of 60%. This result is on preprint on
+              <a class="link-color" href="https://arxiv.org/abs/2310.11423"
+                >ArXiv</a
+              >. Other results of this work are still being published.</span
             >
           </div>
         </div>
@@ -86,7 +103,7 @@
           </div>
           <div class="flex size-12">
             <div
-              class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+              class="after:block after:bg-black after:w-[1px] after:h-dvh after:mx-auto"
             >
               <div
                 class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
@@ -97,24 +114,30 @@
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start"
-              >LABMMol: Laboratório de Modelagem Molecular</span
+              >LabMMol: Laboratório de Modelagem Molecular</span
             >
             <span class="text-start"
-              >Advisors: Magaly Girão Albuquerque, Camilo Henrique da Silva
-              Lima</span
+              >Advisors:
+              <a
+                class="link-color"
+                href="http://lattes.cnpq.br/0780841238637304"
+                >Prof. Dr. Magaly Girão Albuquerque</a
+              >
+              and
+              <a
+                class="link-color"
+                href="http://lattes.cnpq.br/4430323583603846"
+                >Prof. Dr. Camilo Henrique da Silva Lima</a
+              ></span
             >
             <span class="text-justify"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Id
-              donec ultrices tincidunt arcu. Et odio pellentesque diam volutpat
-              commodo sed egestas egestas fringilla. Aliquam faucibus purus in
-              massa tempor nec feugiat nisl pretium. Nulla pharetra diam sit
-              amet nisl suscipit adipiscing bibendum. Nisl pretium fusce id
-              velit. Purus sit amet luctus venenatis lectus. Et tortor consequat
-              id porta nibh venenatis cras sed felis. Sed pulvinar proin gravida
-              hendrerit lectus. Vestibulum mattis ullamcorper velit sed
-              ullamcorper morbi tincidunt ornare.</span
-            >
+              >Research using Molecular Modeling and Data Science techniques
+              focusing on the design of selective furin inhibitors as
+              broad-spectrum antivirals. Design of new antivirals using Homology
+              Modeling, Molecular Docking, Molecular Dynamics and to build
+              inhibition models with aid of Machine Learning techniques with
+              Python, NumPy, Pandas, SciKit-Learn and other libraries.
+            </span>
           </div>
         </div>
 
@@ -126,7 +149,7 @@
           </div>
           <div class="flex size-12">
             <div
-              class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+              class="after:block after:bg-black after:w-[1px] after:h-full after:mx-auto"
             >
               <div
                 class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
@@ -137,26 +160,31 @@
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start"
-              >Fio Cruz: Fundação Oswaldo Cruz</span
+              >FioCruz: Fundação Oswaldo Cruz</span
             >
-            <span class="text-start">Advisor: Núbia Boechat</span>
+            <span class="text-start"
+              >Advisor:
+              <a
+                class="link-color"
+                href="http://lattes.cnpq.br/9152983185617827"
+                >Dr. Núbia Boechat</a
+              ></span
+            >
             <span class="text-justify"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Id
-              donec ultrices tincidunt arcu. Et odio pellentesque diam volutpat
-              commodo sed egestas egestas fringilla. Aliquam faucibus purus in
-              massa tempor nec feugiat nisl pretium. Nulla pharetra diam sit
-              amet nisl suscipit adipiscing bibendum. Nisl pretium fusce id
-              velit. Purus sit amet luctus venenatis lectus. Et tortor consequat
-              id porta nibh venenatis cras sed felis. Sed pulvinar proin gravida
-              hendrerit lectus. Vestibulum mattis ullamcorper velit sed
-              ullamcorper morbi tincidunt ornare.</span
+              >Research in drug synthesis laboratory focusing on optimization of
+              prototypes of non-nucleoside HIV reverse transcriptase inhibitors.
+              Developed organic synthesis of new compounds using wet lab
+              techniques and IR, GC-MS, HPLC, RMN 1D, 2D analysis.</span
             >
           </div>
         </div>
 
-        <h3 class="flex justify-center text-lg m-8">Education</h3>
-        <div class="flex flex-col m-8 max-w-3xl space-y-10">
+        <h3
+          class="flex justify-center text-xl text-violet-500 font-semibold tracking-wide antialiased"
+        >
+          Education
+        </h3>
+        <div class="flex flex-col max-w-3xl space-y-10">
           <div class="flex space-x-8">
             <div class="flex flex-col min-w-56">
               <span class="text-2xl text-end">DSc in Chemistry</span>
@@ -165,36 +193,48 @@
             </div>
             <div class="flex size-12">
               <div
-                class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+                class="after:block after:bg-black after:w-[1px] after:h-80 after:mx-auto after:my-2"
               >
                 <div
                   class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
                 >
-                  <BriefcaseIcon class="w-8 h-8" />
+                  <AcademicCapIcon class="w-8 h-8" />
                 </div>
               </div>
             </div>
             <div class="flex flex-col">
               <span class="text-2xl text-start"
-                >LABMMol: Laboratório de Modelagem Molecular</span
+                >UFRJ - Universidade Federal do Rio de Janeiro</span
               >
               <span class="text-start"
-                >Advisors: Magaly Girão Albuquerque, Camilo Henrique da Silva
-                Lima</span
-              >
+                >Advisors:
+                <a
+                  class="link-color"
+                  href="http://lattes.cnpq.br/0780841238637304"
+                  >Prof. Dr. Magaly Girão Albuquerque</a
+                >
+                and
+                <a
+                  class="link-color"
+                  href="http://lattes.cnpq.br/4430323583603846"
+                  >Prof. Dr. Camilo Henrique da Silva Lima</a
+                >
+              </span>
               <span class="text-justify"
-                >Thesis title: Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Id donec ultrices tincidunt arcu. Et odio
-                pellentesque diam volutpat commodo sed egestas egestas
-                fringilla. Aliquam faucibus purus in massa tempor nec feugiat
-                nisl pretium. Nulla pharetra diam sit amet nisl suscipit
-                adipiscing bibendum. Nisl pretium fusce id velit. Purus sit amet
-                luctus venenatis lectus. Et tortor consequat id porta nibh
-                venenatis cras sed felis. Sed pulvinar proin gravida hendrerit
-                lectus. Vestibulum mattis ullamcorper velit sed ullamcorper
-                morbi tincidunt ornare.</span
-              >
+                >Thesis title: "In silico development of selective human furin
+                inhibitors as broad-spectrum antivirals". The goal of this work
+                was to identify selective, host-directed, broad-spectrum
+                antivirals targeting human profurin using molecular modeling and
+                machine learning techniques. As a product of this work, a 3D
+                model of profurin was developed, validated and analysed using
+                comparative modeling and molecular dynamics. This results was
+                published on the
+                <a
+                  class="link-color"
+                  href="https://www.tandfonline.com/eprint/ASHIAGZUWMFHBSAQWUCD/full?target=10.1080/07391102.2023.2231546"
+                  >Journal of Biomolecular Structure and Dynamics</a
+                >. Other results of this work are still being published.
+              </span>
             </div>
           </div>
 
@@ -206,33 +246,46 @@
             </div>
             <div class="flex size-12">
               <div
-                class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+                class="after:block after:bg-black after:w-[1px] after:h-80 after:mx-auto after:my-2"
               >
                 <div
                   class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
                 >
-                  <BriefcaseIcon class="w-8 h-8" />
+                  <AcademicCapIcon class="w-8 h-8" />
                 </div>
               </div>
             </div>
             <div class="flex flex-col">
               <span class="text-2xl text-start"
-                >Fio Cruz: Fundação Oswaldo Cruz</span
+                >UFRJ - Universidade Federal do Rio de Janeiro</span
               >
-              <span class="text-start">Advisor: Núbia Boechat</span>
+              <span class="text-start"
+                >Advisor:
+                <a
+                  class="link-color"
+                  href="http://lattes.cnpq.br/9152983185617827"
+                  >Dr. Núbia Boechat</a
+                ></span
+              >
               <span class="text-justify"
-                >Dissertation title: Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Id donec ultrices tincidunt arcu. Et odio
-                pellentesque diam volutpat commodo sed egestas egestas
-                fringilla. Aliquam faucibus purus in massa tempor nec feugiat
-                nisl pretium. Nulla pharetra diam sit amet nisl suscipit
-                adipiscing bibendum. Nisl pretium fusce id velit. Purus sit amet
-                luctus venenatis lectus. Et tortor consequat id porta nibh
-                venenatis cras sed felis. Sed pulvinar proin gravida hendrerit
-                lectus. Vestibulum mattis ullamcorper velit sed ullamcorper
-                morbi tincidunt ornare.</span
-              >
+                >Dissertation title: "New isatin derivatives as HIV-1
+                inhibitors". This work aimed the design, synthesis and
+                antiretroviral evaluation of eight new molecules, analogous to
+                EFV, with potential HIV-1 inhibitory activity. The results of
+                the biological evaluation have indicated that all molecules have
+                inhibited both the steps of reverse transcription and virus
+                maturation. Regarding the evaluation in the maturation stage,
+                all molecules showed excellent inhibitory activities. One of the
+                analogues showed a multi-target characteristic inhibition
+                profile, acting both in reverse transcription and in virus
+                maturation stage, inhibiting about 93% in both steps. The
+                results were presented on the
+                <a
+                  class="link-color"
+                  href="https://proceedings.science/brazmedchem-2019/trabalhos/new-isatin-derivatives-analogues-of-efavirenz-as-hiv-1-inhibitors"
+                  >9th Brazilian Symposium on Medicinal Chemistry</a
+                >.
+              </span>
             </div>
           </div>
 
@@ -246,12 +299,12 @@
             </div>
             <div class="flex size-12">
               <div
-                class="after:block after:bg-black after:w-[1px] after:h-56 after:mx-auto after:my-2"
+                class="after:block after:bg-black after:w-[1px] after:h-36 after:mx-auto after:my-2"
               >
                 <div
                   class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
                 >
-                  <BriefcaseIcon class="w-8 h-8" />
+                  <AcademicCapIcon class="w-8 h-8" />
                 </div>
               </div>
             </div>
@@ -259,19 +312,21 @@
               <span class="text-2xl text-start"
                 >IFES - Instituto Federal do Espírito Santo</span
               >
-              <span class="text-start">Advisor: Mauro Cesar Dias</span>
+              <span class="text-start"
+                >Advisor:
+                <a
+                  class="link-color"
+                  href="http://lattes.cnpq.br/3114105343647059"
+                  >Prof. Dr. Mauro Cesar Dias</a
+                ></span
+              >
               <span class="text-justify"
-                >Undergraduate thesis: Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Id donec ultrices tincidunt arcu. Et odio
-                pellentesque diam volutpat commodo sed egestas egestas
-                fringilla. Aliquam faucibus purus in massa tempor nec feugiat
-                nisl pretium. Nulla pharetra diam sit amet nisl suscipit
-                adipiscing bibendum. Nisl pretium fusce id velit. Purus sit amet
-                luctus venenatis lectus. Et tortor consequat id porta nibh
-                venenatis cras sed felis. Sed pulvinar proin gravida hendrerit
-                lectus. Vestibulum mattis ullamcorper velit sed ullamcorper
-                morbi tincidunt ornare.</span
+                >Undergraduate thesis: "The use of open source computer programs
+                as a learning tool in teaching molecular symmetry". This work
+                focused on the development, analysis of computational models of
+                QP complexes, in the form PtX4 and PtA2B2 and its usage on the
+                teaching of Inorganic Chemistry for undergraduate
+                students.</span
               >
             </div>
           </div>
