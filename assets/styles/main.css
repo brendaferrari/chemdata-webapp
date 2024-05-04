@@ -53,3 +53,7 @@ body {
 
 .link-color { color: #8B5CF6; } /* CSS link color (red) */
 .link-color:hover { color: #A4A4A4; } /* CSS link hover (green) */
+
+.hidden {
+  display:none;
+}

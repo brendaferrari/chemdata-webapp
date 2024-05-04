@@ -7,8 +7,9 @@
       data-tooltip-target="tooltip-animation"
       class="flex flex-col place-content-around"
     >
-      <span class="flex justify-center"> {{ name }}</span>
-      <img :src="linkImage" class="flex justify-center w-40 h-40" />
+      <span class="flex self-center"> {{ name }}</span>
+      <span class="flex self-center text-xs"> {{ about }}</span>
+      <img :src="linkImage" class="flex self-center w-10/12" />
       <div
         id="tooltip-animation"
         role="tooltip"
@@ -34,6 +35,11 @@ const props = defineProps({
     default: "",
   },
   linkImage: {
+    type: String,
+    required: true,
+    default: "",
+  },
+  about: {
     type: String,
     required: true,
     default: "",

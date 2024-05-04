@@ -142,6 +142,7 @@
               :name="projects.name"
               :linkPath="projects.linkPath"
               :linkImage="projects.linkImage"
+              :about="projects.about"
             />
           </div>
         </div>
@@ -214,24 +215,29 @@ const skillsReversed = ref([
 
 const projectNames = ref([
   {
-    name: "Project 1",
-    linkPath: "https://github.com/brendaferrari",
-    linkImage: "images/protein.png",
+    name: "PeptoCodes",
+    linkPath: "/peptocodes",
+    linkImage: "images/Peptocodes.png",
+    about:
+      "To transform amino acid smiles to one letter code or three letter code",
   },
   {
     name: "Project 2",
     linkPath: "https://github.com/brendaferrari",
     linkImage: "images/protein.png",
+    about: "test",
   },
   {
     name: "Project 3",
     linkPath: "https://github.com/brendaferrari",
     linkImage: "images/protein.png",
+    about: "test",
   },
   {
     name: "Project 4",
     linkPath: "https://github.com/brendaferrari",
     linkImage: "images/protein.png",
+    about: "test",
   },
 ]);
 
