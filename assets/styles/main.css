@@ -57,3 +57,13 @@ body {
 .hidden {
   display:none;
 }
+
+.button {
+  padding: 4px 4px;
+  cursor: pointer;;
+}
+
+.button:active {
+  box-shadow: 0 4px #666;
+  transform: translateY(3px);
+}
