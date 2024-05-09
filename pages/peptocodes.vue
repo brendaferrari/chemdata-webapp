@@ -2,7 +2,7 @@
   <div class="flex h-screen justify-center">
     <div class="flex flex-col">
       <div class="flex flex-col">
-        <h1 class="p-6 text-3xl">PeptoCodes</h1>
+        <h1 class="p-4 text-3xl">PeptoCodes</h1>
         <p>
           Transform amino acid smiles to one letter code or three letter code
           for later analysis.
@@ -10,7 +10,7 @@
       </div>
 
       <form @submit.prevent="sendInput()">
-        <div class="flex flex-col self-start w-full mt-12 mb-12">
+        <div class="flex flex-col self-start w-full mt-10 mb-10">
           <div class="flex flex-col self-start">
             <h1>Which database would you like to choose?</h1>
           </div>
@@ -77,7 +77,7 @@
                 id="codeCheck1"
                 class=""
                 required
-                value="One letter code"
+                value="one letter code"
               />
               <label
                 for="codeCheck1"
@@ -93,7 +93,7 @@
                 id="codeCheck2"
                 class=""
                 required
-                value="Three letter code"
+                value="three letter code"
               />
               <label
                 for="codeCheck2"
@@ -117,8 +117,11 @@
                 id="smilesCheck"
                 class=""
                 required
-                value="SMILES"
-                @click="shouldShowStringBox = true"
+                value="smiles"
+                @click="
+                  shouldShowStringBox = true;
+                  shouldShowFileBox = false;
+                "
               />
               <label
                 for="smilesCheck"
@@ -135,7 +138,10 @@
                 class=""
                 required
                 value="SMILES file"
-                @click="shouldShowStringBox = false"
+                @click="
+                  shouldShowStringBox = false;
+                  shouldShowFileBox = true;
+                "
               />
               <label
                 for="fileCheck"
@@ -160,7 +166,7 @@
               required
             />
           </div>
-          <div class="mt-6" v-if="shouldShowBox">
+          <div v-if="shouldShowFileBox">
             <label
               for="input_file"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -192,14 +198,31 @@
           </button>
         </div>
         <div v-if="error">{{ error }}</div>
-        <div v-if="result">{{ result }}</div>
+        <div v-if="result">
+          <div class="flex self-center">
+            <h1>Results</h1>
+          </div>
+          <div class="flex self-center">
+            {{ result }}
+          </div>
+        </div>
       </form>
     </div>
   </div>
 </template>
 
 <script setup>
-function sendInput() {
+const inputSmiles = ref();
+const inputCode = ref();
+const inputDB = ref();
+const checkSmiles = ref();
+const error = ref(null);
+const result = ref(null);
+const shouldShowDisclaimer = ref(false);
+const shouldShowStringBox = ref(false);
+const shouldShowFileBox = ref(false);
+
+async function sendInput() {
   // Result vars
   error.value = null;
   result.value = null;
@@ -211,29 +234,29 @@ function sendInput() {
   }
 
   // Get data from API
-  const res = fetchApi();
+  const res = await fetchSmiles();
 
   // Show the result to the user
   result.value = JSON.stringify(res);
 }
 
-const fetchApi = () => {
-  return test;
-};
+const fetchSmiles = async () => {
+  const server = "http://localhost:8080";
+  const route = `${server}/peptocodes`;
+  const body = {
+    inputSmiles: inputSmiles.value,
+    inputCode: inputCode.value,
+    inputDB: inputDB.value,
+    checkSmiles: checkSmiles.value,
+  };
+  console.log(body);
+  const res = await $fetch(route, {
+    method: "POST",
+    body,
+  });
 
-const test = [
-  {
-    smiles: "NCCN",
-    name: "amino",
-  },
-];
-const inputSmiles = ref();
-const inputCode = ref();
-const inputDB = ref();
-const checkSmiles = ref();
-const error = ref(null);
-const result = ref(null);
-const shouldShowDisclaimer = ref(false);
+  return res;
+};
 
 function showDisclaimer() {
   // console.log("TEST");
@@ -254,6 +277,17 @@ function showInputBox() {
 
   if (checkSmiles.value) {
     shouldShowStringBox.value = true;
+  }
+}
+
+function showInputFileBox() {
+  // console.log("TEST");
+  // console.log("INPUTDB: ", inputDB.value);
+
+  shouldShowFileBox.value = false;
+
+  if (checkSmiles.value) {
+    shouldShowFileBox.value = true;
   }
 }
 </script>
