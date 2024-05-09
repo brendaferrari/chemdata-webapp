@@ -10,8 +10,142 @@
       </div>
 
       <form @submit.prevent="sendInput()">
-        <div class="flex flex-col self-start w-full mt-24 mb-12">
-          <div>
+        <div class="flex flex-col self-start w-full mt-12 mb-12">
+          <div class="flex flex-col self-start">
+            <h1>Which database would you like to choose?</h1>
+          </div>
+          <div class="flex justify-start mt-3 space-x-4">
+            <div class="flex items-center">
+              <input
+                v-model="inputDB"
+                type="radio"
+                id="DBCheck1"
+                class=""
+                required
+                value="peptocodes"
+                @click="shouldShowDisclaimer = false"
+              />
+              <label
+                for="DBCheck1"
+                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
+                >peptocodes</label
+              >
+            </div>
+
+            <div class="flex">
+              <input
+                v-model="inputDB"
+                type="radio"
+                id="DBCheck2"
+                class=""
+                required
+                value="norine"
+                @click="shouldShowDisclaimer = true"
+              />
+              <label
+                for="DBCheck2"
+                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
+                >norine</label
+              >
+            </div>
+          </div>
+          <div
+            v-if="shouldShowDisclaimer"
+            id="text1"
+            class="flex flex-col text-xs self-start w-96 mt-2"
+          >
+            <p>
+              You are using Norine database which is freely available to
+              everybody.
+            </p>
+            <p>
+              Norine: update of the nonribosomal peptide resource. Nucleic Acids
+              Research, Nov. 2019, gkz1000, https://doi.org/10.1093/nar/gkz1000
+            </p>
+          </div>
+          <!-- <div>Checked: {{ inputCode }}</div> -->
+
+          <div class="flex flex-col self-start mt-3">
+            <h1>Which representation would you like to choose?</h1>
+          </div>
+
+          <div class="flex justify-start mt-3 space-x-4">
+            <div class="flex items-center">
+              <input
+                v-model="inputCode"
+                type="radio"
+                id="codeCheck1"
+                class=""
+                required
+                value="One letter code"
+              />
+              <label
+                for="codeCheck1"
+                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
+                >One letter code</label
+              >
+            </div>
+
+            <div class="flex">
+              <input
+                v-model="inputCode"
+                type="radio"
+                id="codeCheck2"
+                class=""
+                required
+                value="Three letter code"
+              />
+              <label
+                for="codeCheck2"
+                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
+                >Three letter code</label
+              >
+            </div>
+          </div>
+
+          <div class="flex flex-col self-start mt-3">
+            <h1>
+              Would you like to run a one SMILES or a file with multiple SMILES?
+            </h1>
+          </div>
+
+          <div class="flex justify-start mt-3 space-x-4">
+            <div class="flex items-center">
+              <input
+                v-model="checkSmiles"
+                type="radio"
+                id="smilesCheck"
+                class=""
+                required
+                value="SMILES"
+                @click="shouldShowStringBox = true"
+              />
+              <label
+                for="smilesCheck"
+                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
+                >SMILES</label
+              >
+            </div>
+
+            <div class="flex">
+              <input
+                v-model="checkSmiles"
+                type="radio"
+                id="fileCheck"
+                class=""
+                required
+                value="SMILES file"
+                @click="shouldShowStringBox = false"
+              />
+              <label
+                for="fileCheck"
+                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
+                >SMILES file</label
+              >
+            </div>
+          </div>
+
+          <div v-if="shouldShowStringBox">
             <label
               for="input_smiles"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -26,7 +160,7 @@
               required
             />
           </div>
-          <div class="mt-6">
+          <div class="mt-6" v-if="shouldShowBox">
             <label
               for="input_file"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -72,7 +206,7 @@ function sendInput() {
 
   // Check if there is an error
   if (!inputSmiles.value) {
-    error.value = "perkele";
+    error.value = "Please add your input.";
     return;
   }
 
@@ -94,6 +228,32 @@ const test = [
   },
 ];
 const inputSmiles = ref();
+const inputCode = ref();
+const inputDB = ref();
+const checkSmiles = ref();
 const error = ref(null);
 const result = ref(null);
+const shouldShowDisclaimer = ref(false);
+
+function showDisclaimer() {
+  // console.log("TEST");
+  // console.log("INPUTDB: ", inputDB.value);
+
+  shouldShowDisclaimer.value = false;
+
+  if (inputDB.value) {
+    shouldShowDisclaimer.value = true;
+  }
+}
+
+function showInputBox() {
+  // console.log("TEST");
+  // console.log("INPUTDB: ", inputDB.value);
+
+  shouldShowStringBox.value = false;
+
+  if (checkSmiles.value) {
+    shouldShowStringBox.value = true;
+  }
+}
 </script>
