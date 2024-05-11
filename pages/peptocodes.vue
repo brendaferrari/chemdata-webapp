@@ -192,18 +192,21 @@
         <div class="flex flex-col justify-center">
           <button
             type="submit"
-            class="button self-center mb-12 bg-gradient-to-b from-gray-50 to-gray-400 border-gray-300 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-900 dark:border-gray-600 border rounded-lg w-24 h-8"
+            class="button self-center mb-12 bg-gray-200 dark:bg-gray-600 hover:bg-violet-300 dark:hover:bg-violet-500 rounded-lg w-24 h-8"
           >
             Submit
           </button>
         </div>
         <div v-if="error">{{ error }}</div>
-        <div v-if="result">
+        <div class="flex flex-col self-center" v-if="result">
           <div class="flex self-center">
             <h1>Results</h1>
           </div>
           <div class="flex self-center">
-            {{ result }}
+            {{ output }}
+          </div>
+          <div class="flex self-center">
+            {{ outputError }}
           </div>
         </div>
       </form>
@@ -218,6 +221,8 @@ const inputDB = ref();
 const checkSmiles = ref();
 const error = ref(null);
 const result = ref(null);
+const output = ref(null);
+const outputError = ref();
 const shouldShowDisclaimer = ref(false);
 const shouldShowStringBox = ref(false);
 const shouldShowFileBox = ref(false);
@@ -238,6 +243,8 @@ async function sendInput() {
 
   // Show the result to the user
   result.value = JSON.stringify(res);
+  output.value = res.result[0];
+  outputError.value = res.result[1];
 }
 
 const fetchSmiles = async () => {
@@ -249,7 +256,6 @@ const fetchSmiles = async () => {
     inputDB: inputDB.value,
     checkSmiles: checkSmiles.value,
   };
-  console.log(body);
   const res = await $fetch(route, {
     method: "POST",
     body,
