@@ -7,11 +7,13 @@ tags: [welcome]
 toc: true
 ---
 
-**Hello!**
+<p class="text-center text-4xl">Hello!</p>
 
-![Alt Text](https://media1.tenor.com/images/72c9b849aa10b222371ebb99a6b1896a/tenor.gif?itemid=8807701)
+<img class="center-img" src="https://media1.tenor.com/images/72c9b849aa10b222371ebb99a6b1896a/tenor.gif?itemid=8807701" alt
+    width="400" 
+    height="300">
 
-**and welcome!**
+<p class="text-center text-4xl">and welcome!</p>
 
 In this blog I'm going to share with the internet my bio/cheminformatics learning process. I am going to write about the codes I have written and share new references I find along the way.
 

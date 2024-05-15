@@ -7,6 +7,8 @@ tags: [molecular-dynamics, GROMACS, chemistry]
 toc: true
 ---
 
+<h1 class="mt-6 center-txt">GROMACS Molecular Dynamics analysis</h1>
+
 Hello everyone!
 
 This past month I had to re-do some Molecular Dynamics (MD) analysis and, since before that, I spent a lot of time working with projects that were more Machine Learning related, I had to remember the best way to perform an MD analysis. That's why came to me the idea to write a quick tutorial to help future me (let's never forget to write tutorials!!) and to help anyone else that needs a head start on how to do MD analysis.
@@ -27,17 +29,14 @@ To visualize the protein you may use [PyMOL](https://pymol.org/2/) and for MD si
 
 If in the process of visualization, your protein seems broken, fragmented or have residues stretched out, don't panic (not yet!). This could be a [Periodic Boundary Condition situation](https://manual.gromacs.org/current/reference-manual/algorithms/periodic-boundary-conditions.html). You may refer to some people describing this situation over [here](https://www.researchgate.net/post/Why_is_my_protein_broken_down_during_molecular_dynamics_simulation) and [here](https://www.researchgate.net/post/How-to-remove-GROMACS-periodic-boundary-conditions).
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/pbc.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/pbc.png?raw=true" alt
     width="400" 
     height="300">
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/fragment.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/fragment.png?raw=true" alt
     width="400" 
     height="300">
-    <em>Example of necessary PBC processing</em>
-</p>
-</center>
+
+<p class="center-txt">Example of necessary PBC processing</p>
 
 For me, this situation happened a lot when using VMD to visualize the MD simulation. I had a lot of problems to fit the trajectory to make the protein look whole again. To fit the protein you are going to have to use the "gmx trjconv" tool. Be aware that there is a lot of options to choose to fit the trajectory, I advise starting whith the following option:
 
@@ -57,31 +56,24 @@ I am going to use the QTGrace to plot all the graphs in this tutorial. Since it 
 
 This step is also explained in the [tutorial](https://www.youtube.com/watch?v=wIgIadhHGPQ&t=428s), but i thought it would be great to enphasize it here: Using the tool transform it is possible to run the averages. The number you are going to put on lenght of average depend on which average you wish to study, for me I stuck with 10 ps, so I selected 10 on lenght of average. And then, that is it! It was more simple than I expected it to be.
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/grace_transformation.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/grace_transformation.png?raw=true" alt
     width="300" 
     height="300">
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/grace_transformation1.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/grace_transformation1.png?raw=true" alt
     width="300" 
     height="300">
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/pressure.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/pressure.png?raw=true" alt
     width="400" 
     height="300">
-    <em>How to calculate averages on graph. First picture represent the first step, second picture the second step and last picture is how the graph should look like</em>
-</p>
-</center>
+
+<p class="center-txt">How to calculate averages on graph. First picture represent the first step, second picture the second step and last picture is how the graph should look like</p>
 
 ## Let's start the fun part... RMSD, RMSF, Rg?
 
 This is how your movie simulation may be looking (visualization using UCSF Chimera, tutorial over [here](https://www.youtube.com/watch?v=_-PVNYgz0gU) and [here](https://www.youtube.com/watch?v=AfcaEauzYqk). In summary, to visualize the movie just go to tools>MD/Ensemble Analysis>MD Movie):
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/simulation.gif?raw=true" alt>
-    <em>MD Simulation</em>
-</p>
-</center>
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/simulation.gif?raw=true" alt>
+<p class="center-txt">MD Simulation</p>
 
 To understand better how your system is behaving through the simulation it is important to analyze some properties of the dynamics: [RMSD](https://manual.gromacs.org/current/onlinehelp/gmx-rms.html), [RMSF](https://manual.gromacs.org/current/onlinehelp/gmx-rmsf.html), [Rg](https://manual.gromacs.org/current/onlinehelp/gmx-gyrate.html). It is not the scope of this tutorial to explain this concepts, so feel free to read a bit about it and come back after understanding a little bit more.
 
@@ -99,20 +91,17 @@ gmx rms -s em.tpr -f md_0_1_noPBC.xtc -o rmsd_xtal.xvg -tu ns
 
 Which option you are going to choose between those two and between the options presented on group for least squares it and group or RMSD calculation, will depend on what kind of analysis you want to do. The RMSD of the system will be larger and will be interesting to analyze when you want to study the big picture. The RMSD of the c-alpha or the protein is the inverse.
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_sys.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_sys.png?raw=true" alt
     width="400" 
     height="300">
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_pro.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_pro.png?raw=true" alt
     width="400" 
     height="300">
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_ca.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_ca.png?raw=true" alt
     width="400" 
     height="300">
-    <em>RMSD</em>
-</p>
-</center>
+
+<p class="center-txt">RMSD</p>
 
 Choose option 0 (System) group for least squares it and group and RMSD calculation to analyze the system, option 1 (Protein) or both to analyze protein and 3 (C-alpha) to analyze de C-alpha.
 
@@ -132,14 +121,11 @@ gmx rmsf -f md_0_1_noPBC.xtc -s md_0_1.tpr -o rmsf.xvg -res
 
 As for the other analysis, you may to choose which group gmx will use to calculate de RMSF, in this tutorial I also choose C-alpha:
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsf_ca.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsf_ca.png?raw=true" alt
     width="400" 
     height="300">
-    <em>RMSF</em>
-</p>
-</center>
+
+<p class="center-txt">RMSF</p>
 
 The fluctuation by residue is intrisecally related to the topology of the protein. Which means, the more flexible the region, more it will fluctuate. In the case of the protein we simulated, the region around residues 45-50 are moving a lot, which makes sense, since it is in a loop region, naturally more flexible. The region towards the end of the protein is a helix-loop-helix region, which means it had to be a little bit more rigid. But we observe more flexibility in this region. This could mean that it is a region that should be more flexible because some catalytic activity or some mechanism that is related to the protein itself.
 
@@ -151,14 +137,11 @@ gmx gyrate -s md_0_1.tpr -f md_0_1_noPBC.xtc -o gyrate.xvg
 
 As for the other analysis, you may to choose which group gmx will use to calculate de Rg, in this tutorial I also choose C-alpha:
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rg.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rg.png?raw=true" alt
     width="400" 
     height="300">
-    <em>Rg</em>
-</p>
-</center>
+
+<p class="center-txt">Rg</p>
 
 From this graph is possible to conclude that the protein is more compacted towards the end of the simulation, which means it is getting more and more stable.
 
@@ -174,25 +157,19 @@ gmx cluster -f md_0_1_noPBC.xtc -s md_0_1.tpr -cl md_0_1.pdb -g cluster.log
 
 The file "cluster.log" has all the necessary information to analyze the clusters. In the table shown in the next figure, the important things to look for is: cl. represents the cluster number, #st represents the number of frames that are group in that cluster and middle rmsd, which is going to give to you the frame that is the median of all the clusters grouped in that group. In this case, the simulation could not generate clusters with more that one frame in each cluster, this could happen.
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/clusterex.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/clusterex.png?raw=true" alt
     width="400" 
     height="300">
-    <em>cluster.log example</em>
-</p>
-</center>
+
+<p class="center-txt">cluster.log example</p>
 
 So, I got another example here in the next picture. In this case, the cluster number 682 has 248 frames in which frame number 76930 is the median of all the frames grouped in this cluster. So, this is the one frame you are going to get to represent your simulation, if this cluster has the most amount of frames grouped in it. If another cluster has 300 frames, you are going to get the other one. Got it? Just look for the higher amount of frames in a cluster!
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/clusterfull.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/clusterfull.png?raw=true" alt
     width="400" 
     height="300">
-    <em>Another cluster.log example</em>
-</p>
-</center>
+
+<p class="center-txt">Another cluster.log example</p>
 
 In our case, since there is no most representative structure, I am going to analyze the first and the last frames of the simulation. To get the first frame you are going to use the following command:
 
@@ -214,14 +191,11 @@ align start, end
 
 So, after that I get the following image:
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/align.png?raw=true" alt
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/align.png?raw=true" alt
     width="400" 
     height="400">
-    <em>Start and end frames aligned</em>
-</p>
-</center>
+
+<p class="center-txt">Start and end frames aligned</p>
 
 Since the time of simulation was only 1ns, no drastic changes were observed in the strucuture, which is shown by an RMSD of 1.088. It is possible to observe that, some loops are a little bit deslocated from its initial position and some alpha helices diminished in size. In simulations that run for a bigger amount of time it is possible to notice bigger changes.
 
@@ -229,7 +203,7 @@ So, that is it for the first part. This is only the basic stuff you could start 
 
 I hope this tutorial was helpful for you as it was helpful for me doing it. Now, I am never going to skip the tutorial writing step!
 
-### <em>References</em>
+### References
 
 LOBANOV, M. Yu; BOGATYREVA, N. S.; GALZITSKAYA, O. V. Radius of gyration as an indicator of protein structure compactness. Molecular Biology, v. 42, n. 4, p. 623-628, 2008.
 

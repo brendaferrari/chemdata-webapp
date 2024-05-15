@@ -151,7 +151,7 @@
 
         <div class="flex justify-center p-4">
           <div
-            class="bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-72 rounded-lg mt-6 hover:shadow-black/70 not-prose dark:text-zinc-800"
+            class="center-txt bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-72 rounded-lg mt-6 hover:shadow-black/70 not-prose dark:text-zinc-800"
           >
             <NuxtLink to="/projects"
               >click here to check other Projects...</NuxtLink

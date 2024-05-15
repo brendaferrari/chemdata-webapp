@@ -7,7 +7,9 @@ tags: [interactive-plot, python, chemistry]
 toc: true
 ---
 
-On the past months I was working on a fingerprint analysis in a dataset of my interest. When I obtained the data on a plot I was not happy about
+<h1 class="mt-6 center-txt">Interactive plot for molecules</h1>
+
+Over the past months I was working on a fingerprint analysis in a dataset of my interest. When I obtained the data on a plot I was not happy about
 just to show the data points without any labels on it. When I searched more about ways to show labels on a plot I found that it was possible to hover data over points on scatterplots! And then I thought with myself: _"Hey, Can I hover images over my plots? It would be amazing if people could get my analysis and just go exploring the molecules!"_.
 
 I searched a lot, but unfortunately found no library that I could use just python to implement in my code... But... I found **[bokeh](https://bokeh.org/)**!
@@ -16,18 +18,14 @@ Even though bokeh was made to implement on python codes with NumPy, Scipy, Panda
 
 Bokeh is a great library to build interactive plots that can make your client or audience explore the analysis of the data. For example, in the image below, published at the bokeh site, the user can explore the data themselves, increasing the familiarity and interest for the information you have. This is really important for **storytelling**!
 
-<center>
-<p>
-    <img src="https://bokeh.org/img/apps.gif" alt>
-    <em>Bokeh interactive plot</em>
-</p>
-</center>
+<img class="center-img" src="https://bokeh.org/img/apps.gif" alt>
+<p class="center-txt">Bokeh interactive plot</p>
 
 I decided to apply the hover over a point functionality on a dataset of 9 compounds that I retrieved from [rdkit github](https://github.com/rdkit/rdkit/blob/master/Docs/Book/data/bzr.smi). So, first of all I had to generate the images of the compounds. I used rdkit library in the [_images.py_](https://github.com/brendaferrari/interactive_plot/blob/master/images.py) to do this.
 
-With **Chem.SDMolSupplier** I supplied the molecules from a molfile dataset, computed the 2D coordinates using **AllChem.Compute2DCoords** and drawn the molecules using **rdMolDraw2D.MolDraw2DCairo**. The **mol.GetProp** module was used to get the name of the molecule to name the output files.
+With **Chem.SDMolSupplier** I supplied the molecules from a molfile dataset, computed the 2D coordinates using **AllChem.Compute2DCoords** and drawn the molecules using **rdMolDraw2D.MolDraw2DCairo**. The **mol.GetProp** module was used to get the name of the molecule to name the output files. images.py:
 
-```
+```python
 from rdkit.Chem.Draw import rdMolDraw2D
 from rdkit.Chem import AllChem
 from rdkit import Chem
@@ -46,26 +44,16 @@ for mol in supplier:
     d.WriteDrawingText(f'resources/images/{property}.png')
 ```
 
-<center>
-
-images.py
-
-</center>
-
 And the molecules was generated as it follows:
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/interactive-plot-for-molecules/interactive-plot.png?raw=true" alt>
-    <em>Molecules generated using images.py</em>
-</p>
-</center>
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/interactive-plot-for-molecules/interactive-plot.png?raw=true" alt>
+<p class="center-txt">Molecules generated using images.py</p>
 
 With the compound images generated, all I had to do was to plot some information. As the purpose of this exercice was not to study any property, I just used **random.randint** to generate some random data.
 
-From **bokeh.plotting** in [_interactive_plot.py_](https://github.com/brendaferrari/interactive_plot/blob/master/interactive_plot.py), **ColumnDataSource** was used to get the data in a dictionary format and from **bokeh.models**, **HoverTool** was used to implement the hover over a dot functionality. On **source**, **desc** was used to describe the name of the compounds to be used as the legend of the image and in **imgs** is the path of the file. It is possible to change the size, margin, border and style of the image at **hover** < img >< /img > and legend style at < span < /span >. To generate the plot, **figure** from **bokeh.plotting** is used. The **p.circle** is used to edit the size of the data points. To save the plot is necessary to use **output_file** from **bokeh.plotting**.
+From **bokeh.plotting** in [_interactive_plot.py_](https://github.com/brendaferrari/interactive_plot/blob/master/interactive_plot.py), **ColumnDataSource** was used to get the data in a dictionary format and from **bokeh.models**, **HoverTool** was used to implement the hover over a dot functionality. On **source**, **desc** was used to describe the name of the compounds to be used as the legend of the image and in **imgs** is the path of the file. It is possible to change the size, margin, border and style of the image at **hover** < img >< /img > and legend style at < span < /span >. To generate the plot, **figure** from **bokeh.plotting** is used. The **p.circle** is used to edit the size of the data points. To save the plot is necessary to use **output_file** from **bokeh.plotting**. interactive_plot.py:
 
-```
+```python
 from bokeh.plotting import figure, output_file, show, ColumnDataSource
 from bokeh.models import HoverTool
 from numpy import random
@@ -117,20 +105,13 @@ p.circle('x', 'y', size=20, source=source)
 show(p)
 ```
 
-<center>
-
-interactive_plot.py
-
-</center>
-
 And then its done!
 
-<center>
-<p>
-    <img src="https://github.com/brendaferrari/chemdata/blob/master/_posts/interactive-plot-for-molecules/interactive_plot.gif?raw=true" alt>
-    <em>Plot generated using interactive_plot.py</em>
-</p>
-</center>
+<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/interactive-plot-for-molecules/interactive_plot.gif?raw=true" alt
+    width="800" 
+    height="600">
+
+<p class="center-txt" >Plot generated using interactive_plot.py</p>
 
 In the future, I want to apply this interactive visualization to the analysis of some properties of a dataset. I want to understand how to integrate html to python coding.
 

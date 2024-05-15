@@ -1,6 +1,7 @@
 ---
-description: 'List of all my blog posts'
+description: "List of all my blog posts"
 ---
-# Blog Posts
+
+# <p class="center-txt"> Blog Posts</p>
 
 ::blog-posts

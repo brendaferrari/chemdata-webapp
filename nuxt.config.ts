@@ -11,10 +11,11 @@ export default defineNuxtConfig({
   ],
   content: { 
     highlight: { 
+      langs: ['python'],
       theme: { 
         default: 'min-light',
         dark: 'min-dark'
-      }
+      } 
     }
   },
   css: ['~/assets/styles/main.css'],
