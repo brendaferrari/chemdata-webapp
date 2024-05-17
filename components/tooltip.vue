@@ -1,9 +1,9 @@
 <template>
   <div class="relative z-10 flex flex-col items-center">
-    <div v-if="show" class="tooltip">
+    <div class="tooltip">
       {{ text }}
     </div>
-    <div @mouseover="show = true" @mouseleave="show = false">
+    <div>
       <slot></slot>
     </div>
   </div>
@@ -13,7 +13,7 @@
 defineProps({
   text: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
@@ -22,17 +22,20 @@ const show = ref(false);
 
 <style scoped>
 .tooltip {
-  @apply absolute z-[999] w-max max-w-80 p-2 text-sm text-white bg-black rounded shadow-lg bottom-7;
+  @apply absolute z-[999] w-max max-w-80 p-2 text-xs text-white bg-black rounded shadow-lg left-16 top-6;
 }
 
 .tooltip::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: #000000;
+  border-top: 0;
   margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #000 transparent transparent transparent;
+  margin-top: -4.5px;
 }
 </style>

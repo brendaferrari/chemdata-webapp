@@ -196,8 +196,8 @@ const skills = ref([
     name: "Deep Learning",
   },
   {
-    percentage: 15,
-    name: "Full stack - Backend/Frontend",
+    percentage: 40,
+    name: "Full stack",
   },
 ]);
 
@@ -219,8 +219,8 @@ const skillsReversed = ref([
     name: "Cheminformatics",
   },
   {
-    percentage: 100,
-    name: "cat",
+    percentage: 90,
+    name: "Organic Chemistry",
   },
 ]);
 
