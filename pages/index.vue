@@ -66,7 +66,7 @@
       </div>
 
       <div
-        class="flex flex-col second h-fit bg-violet-200 dark:bg-violet-300 p-4 lg:flex-row lg:h-screen"
+        class="flex flex-col second h-fit bg-violet-200 dark:bg-violet-300 p-2 lg:flex-row lg:h-screen"
         id="second"
       >
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
@@ -82,14 +82,15 @@
           <span class="text-justify not-prose dark:text-zinc-800">
             My name is Brenda Ferrari and I will be a Postdoctoral Reseacher at
             the Computational Nanoscience group at Nanoscience Center on the
-            University of Jyväskylä (Jyväskylä, Finland). I will work on a
-            project where ligand-stabilized metal nanoclusters are studied as
-            sensors for chiral biomolecules in aqueous solvents. I am also I am
-            adventuring myself on the world of front-end/back-end by creating
-            this website with the possibility to run the scripts and software I
-            am developing. I usually write codes related to my research and blog
-            posts to share concepts I have learned! If you're interested to
-            learn with my codes please feel free to explore!
+            University of Jyväskylä (Jyväskylä, Finland).
+          </span>
+          <span class="text-justify not-prose dark:text-zinc-800">
+            I will work on a project where ligand-stabilized metal nanoclusters
+            are studied as sensors for chiral biomolecules in aqueous solvents.
+            I am also I am adventuring myself on the world of frontend/backend
+            by creating this website with the possibility to run the scripts and
+            software I am developing. I usually write codes related to my
+            research and blog posts to share concepts I have learned!
           </span>
         </div>
 
@@ -233,22 +234,26 @@ const projectNames = ref([
       "To transform amino acid smiles to one letter code or three letter code",
   },
   {
-    name: "Project 2",
-    linkPath: "https://github.com/brendaferrari",
-    linkImage: "images/protein.png",
-    about: "test",
+    name: "Head and Tail Assign",
+    linkPath: "https://github.com/brendaferrari/HeadTailAssign",
+    linkImage: "images/hta_logo.png",
+    about:
+      "Assigns the head and tail atom position in a monomeric unit or in a polymerization reaction, both represented in SMILES string format",
   },
   {
-    name: "Project 3",
-    linkPath: "https://github.com/brendaferrari",
-    linkImage: "images/protein.png",
-    about: "test",
+    name: "AutoPaDELPy",
+    linkPath: "https://github.com/brendaferrari/AutoPaDELPy",
+    linkImage: "images/autopadelpy_logo.png",
+    about:
+      "AutoPaDELPy provides an automated user interface for PaDELPy software.",
   },
+
   {
-    name: "Project 4",
-    linkPath: "https://github.com/brendaferrari",
-    linkImage: "images/protein.png",
-    about: "test",
+    name: "PORCUPINEplot",
+    linkPath: "https://github.com/brendaferrari/PORCUPINEplot",
+    linkImage: "images/porcupine.png",
+    about:
+      "PORCUPINEplot is a script developed to automate the generation of porcupine plots of PCA analysis.",
   },
 ]);
 

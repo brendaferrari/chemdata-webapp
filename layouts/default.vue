@@ -33,8 +33,9 @@
     </main>
 
     <div
-      class="flex flex-col justify-between relative w-full bottom-0 size-80 p-4 bg-default dark:bg-dark"
+      class="flex flex-col justify-between w-full bottom-0 size-80 p-4 bg-default dark:bg-dark"
     >
+      <hr class="border-gray-400" />
       <Footer />
     </div>
   </div>

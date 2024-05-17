@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-center m-2 cursor-pointer bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg w-56 h-96 hover:shadow-black/70"
+    class="flex justify-center p-4 m-2 cursor-pointer bg-slate-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg w-56 h-96 hover:shadow-black/70"
     @click="handleClick"
   >
     <div

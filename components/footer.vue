@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-evenly pb-12">
+  <div class="flex justify-evenly">
     <div class="flex flex-col items-center">
       <MapPinIcon class="flex h-20 w-20 p-2 hover:animate-pulse" />
       <span class="flex">WHERE TO FIND ME?</span>
