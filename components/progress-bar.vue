@@ -4,6 +4,7 @@
       name
     }}</span>
     <div class="flex w-full bg-gray-200 rounded-full dark:bg-gray-700">
+      <Tooltip :text="aaaa" />
       <div
         class="flex space-x-10 bg-violet-700 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full percentage"
       >

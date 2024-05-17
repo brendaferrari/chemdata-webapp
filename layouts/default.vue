@@ -71,6 +71,6 @@ body {
   font-family: "Roboto";
 }
 body {
-  @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300;
+  @apply bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300;
 }
 </style>

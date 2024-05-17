@@ -19,7 +19,7 @@
           </div>
           <div class="md:col-span-2 md:block not-prose" v-if="doc.toc">
             <aside
-              class="sticky mt-24 top-8 p-2 rounded-lg bg-violet-100 dark:bg-violet-900"
+              class="sticky mt-24 top-8 p-2 rounded-lg dark:shadow-[0px_5px_15px_rgb(237,233,254,0.35)] shadow-[0px_5px_15px_rgb(109,40,217,0.35)] bg-violet-100 dark:bg-violet-900"
             >
               <div class="font-semibold mb-2">Table of Contents</div>
               <nav>

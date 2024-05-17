@@ -127,6 +127,15 @@
               </div>
             </div>
           </div>
+          <div class="flex mt-4">
+            <img
+              src="https://media.tenor.com/akBy6qWGjs4AAAAi/peach-cat-mochi-peach-cat.gif"
+              alt
+              width="100"
+              height="100"
+            />
+            <div class="thought">Always learning...</div>
+          </div>
         </div>
       </div>
 
@@ -187,27 +196,27 @@ const skills = ref([
     name: "Deep Learning",
   },
   {
-    percentage: 100,
-    name: "cat",
+    percentage: 15,
+    name: "Full stack - Backend/Frontend",
   },
 ]);
 
 const skillsReversed = ref([
   {
-    percentage: 85,
+    percentage: 95,
     name: "Homology Modeling",
   },
   {
-    percentage: 90,
+    percentage: 85,
     name: "Molecular Dynamics",
   },
   {
-    percentage: 50,
-    name: "cat",
+    percentage: 75,
+    name: "Molecular Docking",
   },
   {
-    percentage: 75,
-    name: "cat",
+    percentage: 85,
+    name: "Cheminformatics",
   },
   {
     percentage: 100,
