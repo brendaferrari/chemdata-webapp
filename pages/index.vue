@@ -17,7 +17,7 @@
           class="flex justify-center p-2 text-lg sm:text-xl dark:text-zinc-800"
         >
           <p>
-            DSc in Chemistry | Cheminformatician | Artificial Inteligence |
+            DSc in Chemistry | Cheminformatician | Artificial Intelligence |
             Computational Chemistry
           </p>
         </div>

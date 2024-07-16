@@ -1,8 +1,8 @@
 <template>
   <div class="flex h-screen justify-center">
     <div class="flex flex-col">
-      <div class="flex flex-col">
-        <h1 class="p-4 text-3xl">PeptoCodes</h1>
+      <div class="flex flex-col justify-center">
+        <h1 class="p-4 self-center text-3xl">PeptoCodes</h1>
         <p>
           Transform amino acid smiles to one letter code or three letter code
           for later analysis.
@@ -151,10 +151,10 @@
             </div>
           </div>
 
-          <div v-if="shouldShowStringBox">
+          <div class="" v-if="shouldShowStringBox">
             <label
               for="input_smiles"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              class="flex justify-center mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >Input SMILES</label
             >
             <input
@@ -169,7 +169,7 @@
           <div v-if="shouldShowFileBox">
             <label
               for="input_file"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              class="flex justify-center mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >Input file</label
             >
             <input
@@ -197,8 +197,8 @@
             Submit
           </button>
         </div>
-        <div v-if="error">{{ error }}</div>
-        <div class="flex flex-col self-center" v-if="result">
+        <div class="flex justify-center" v-if="error">{{ error }}</div>
+        <div class="flex flex-col self-center max-w-xl" v-if="result">
           <div class="flex self-center">
             <h1>Results</h1>
           </div>
@@ -256,6 +256,7 @@ const fetchSmiles = async () => {
     inputDB: inputDB.value,
     checkSmiles: checkSmiles.value,
   };
+  console.log(body);
   const res = await $fetch(route, {
     method: "POST",
     body,

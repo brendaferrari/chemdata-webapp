@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col dark:non-prose">
+  <div class="flex flex-col">
     <div class="bg-violet-200 h-fit">
       <h3
         class="flex justify-center p-8 mt-8 dancing-script-font text-3xl md:text-5xl sm:text-4xl"
       >
         My career
       </h3>
-      <div class="flex flex-col justify-center m-8 max-w-3xl space-y-10">
+      <div class="flex flex-col justify-center pr-36 pl-36 pb-24 space-y-10">
         <h3
           class="flex justify-center text-xl text-violet-500 font-semibold tracking-wide antialiased"
         >
@@ -178,13 +178,15 @@
             >
           </div>
         </div>
+      </div>
 
+      <div class="flex flex-col justify-center pr-36 pl-36 pb-24 space-y-10">
         <h3
           class="flex justify-center text-xl text-violet-500 font-semibold tracking-wide antialiased"
         >
           Education
         </h3>
-        <div class="flex flex-col max-w-3xl space-y-10">
+        <div class="flex flex-col space-y-10">
           <div class="flex space-x-8">
             <div class="flex flex-col min-w-56">
               <span class="text-2xl text-end">DSc in Chemistry</span>
