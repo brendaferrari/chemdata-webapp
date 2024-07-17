@@ -11,6 +11,7 @@
       <EnvelopeIcon class="flex h-20 w-20 p-2 hover:animate-pulse" />
       <span class="flex">EMAIL ME</span>
       <span class="flex">brendafferrari@gmail.com</span>
+      <span class="flex">brenda.d.desouzaferrari@jyu.com</span>
     </div>
   </div>
   <hr class="border-gray-400" />
