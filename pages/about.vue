@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col dark:text-zinc-800">
     <div class="bg-violet-200 h-fit">
       <h3
         class="flex justify-center p-8 mt-8 dancing-script-font text-3xl md:text-5xl sm:text-4xl"
@@ -19,15 +19,15 @@
             <span class="text-end">Jyväskylä, Finland</span>
           </div>
           <div class="flex size-12">
-            <div
+            <!-- <div
               class="after:block after:bg-black after:w-[1px] after:h-dvh after:mx-auto"
+            > -->
+            <div
+              class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
             >
-              <div
-                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-              >
-                <BriefcaseIcon class="w-8 h-8" />
-              </div>
+              <BriefcaseIcon class="w-8 h-8" />
             </div>
+            <!-- </div> -->
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start">University of Jyväskylä</span>
@@ -54,15 +54,15 @@
             <span class="text-end">Rio de Janeiro, Brazil</span>
           </div>
           <div class="flex size-12">
-            <div
+            <!-- <div
               class="after:block after:bg-black after:w-[1px] after:h-dvh after:mx-auto"
+            > -->
+            <div
+              class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
             >
-              <div
-                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-              >
-                <BriefcaseIcon class="w-8 h-8" />
-              </div>
+              <BriefcaseIcon class="w-8 h-8" />
             </div>
+            <!-- </div> -->
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start">IBM Research Brazil</span>
@@ -102,15 +102,15 @@
             <span class="text-end">Rio de Janeiro, Brazil</span>
           </div>
           <div class="flex size-12">
-            <div
+            <!-- <div
               class="after:block after:bg-black after:w-[1px] after:h-dvh after:mx-auto"
+            > -->
+            <div
+              class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
             >
-              <div
-                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-              >
-                <BriefcaseIcon class="w-8 h-8" />
-              </div>
+              <BriefcaseIcon class="w-8 h-8" />
             </div>
+            <!-- </div> -->
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start"
@@ -148,15 +148,15 @@
             <span class="text-end">Rio de Janeiro, Brazil</span>
           </div>
           <div class="flex size-12">
-            <div
+            <!-- <div
               class="after:block after:bg-black after:w-[1px] after:h-full after:mx-auto"
+            > -->
+            <div
+              class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
             >
-              <div
-                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-              >
-                <BriefcaseIcon class="w-8 h-8" />
-              </div>
+              <BriefcaseIcon class="w-8 h-8" />
             </div>
+            <!-- </div> -->
           </div>
           <div class="flex flex-col">
             <span class="text-2xl text-start"
@@ -194,15 +194,15 @@
               <span class="text-end">Rio de Janeiro, Brazil</span>
             </div>
             <div class="flex size-12">
-              <div
+              <!-- <div
                 class="after:block after:bg-black after:w-[1px] after:h-80 after:mx-auto after:my-2"
+              > -->
+              <div
+                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
               >
-                <div
-                  class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-                >
-                  <AcademicCapIcon class="w-8 h-8" />
-                </div>
+                <AcademicCapIcon class="w-8 h-8" />
               </div>
+              <!-- </div> -->
             </div>
             <div class="flex flex-col">
               <span class="text-2xl text-start"
@@ -247,15 +247,15 @@
               <span class="text-end">Rio de Janeiro, Brazil</span>
             </div>
             <div class="flex size-12">
-              <div
+              <!-- <div
                 class="after:block after:bg-black after:w-[1px] after:h-80 after:mx-auto after:my-2"
+              > -->
+              <div
+                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
               >
-                <div
-                  class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-                >
-                  <AcademicCapIcon class="w-8 h-8" />
-                </div>
+                <AcademicCapIcon class="w-8 h-8" />
               </div>
+              <!-- </div> -->
             </div>
             <div class="flex flex-col">
               <span class="text-2xl text-start"
@@ -300,15 +300,15 @@
               <span class="text-end">Rio de Janeiro, Brazil</span>
             </div>
             <div class="flex size-12">
-              <div
+              <!-- <div
                 class="after:block after:bg-black after:w-[1px] after:h-36 after:mx-auto after:my-2"
+              > -->
+              <div
+                class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
               >
-                <div
-                  class="flex items-center justify-center size-12 bg-violet-300 rounded-full"
-                >
-                  <AcademicCapIcon class="w-8 h-8" />
-                </div>
+                <AcademicCapIcon class="w-8 h-8" />
               </div>
+              <!-- </div> -->
             </div>
             <div class="flex flex-col">
               <span class="text-2xl text-start"
