@@ -169,7 +169,7 @@
 
             <form @submit.prevent="copyExample()">
               <div class="flex flex-col mt-8">
-                <div class="flex max-w-2xl text-sm italic mb-2">
+                <div class="flex max-w-xl text-sm italic mb-2">
                   <p>
                     You can use the following example to test the conversion to
                     one letter code using the peptocodes database:
