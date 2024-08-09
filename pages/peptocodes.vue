@@ -157,6 +157,7 @@
               class="flex justify-center mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >Input SMILES</label
             >
+
             <input
               v-model="inputSmiles"
               type="text"
@@ -165,6 +166,41 @@
               placeholder="write your SMILES here"
               required
             />
+
+            <form @submit.prevent="copyExample()">
+              <div class="flex flex-col mt-8">
+                <div class="flex max-w-2xl text-sm italic mb-2">
+                  <p>
+                    You can use the following example to test the conversion to
+                    one letter code using the peptocodes database:
+                  </p>
+                </div>
+
+                <div class="flex justify-center">
+                  <div class="flex relative">
+                    <!-- The text field -->
+                    <input
+                      class="self-center max-h-0.5 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      type="text"
+                      value="N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])([C@]([H])(O)C)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)O"
+                      id="myInput"
+                      disabled
+                      readonly
+                    />
+                  </div>
+
+                  <div class="flex absolute mt-1 ml-28">
+                    <!-- The button used to copy the text -->
+                    <!-- # TODO UPDATE THE ALERT MESSAGE -->
+                    <button
+                      class="max-h-6 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
           <div v-if="shouldShowFileBox">
             <label
@@ -296,5 +332,20 @@ function showInputFileBox() {
   if (checkSmiles.value) {
     shouldShowFileBox.value = true;
   }
+}
+
+async function copyExample() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
 }
 </script>
