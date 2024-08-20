@@ -61,4 +61,11 @@ onMounted(() => {
     }
   });
 });
+
+useSeoMeta({
+  title: "Blog Posts",
+  ogTitle: "Blog Posts",
+  description: "List of blog posts",
+  ogDescription: "List of blog postss",
+});
 </script>

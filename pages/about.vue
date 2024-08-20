@@ -345,6 +345,13 @@
 <script setup>
 import { BriefcaseIcon } from "@heroicons/vue/24/solid";
 import { AcademicCapIcon } from "@heroicons/vue/24/solid";
+
+useSeoMeta({
+  title: "About me",
+  ogTitle: "About me",
+  description: "About me section",
+  ogDescription: "About me section",
+});
 </script>
 
 <!-- <template>

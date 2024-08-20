@@ -348,4 +348,13 @@ async function copyExample() {
   // Alert the copied text
   alert("Copied the text: " + copyText.value);
 }
+
+useSeoMeta({
+  title: "PepToCodes",
+  ogTitle: "PepToCodes",
+  description:
+    "Transform amino acid smiles to one letter code or three letter code for later analysis",
+  ogDescription:
+    "Transform amino acid smiles to one letter code or three letter code for later analysis",
+});
 </script>
