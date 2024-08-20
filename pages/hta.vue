@@ -1,9 +1,14 @@
 <template>
-  <div class="flex h-screen">
-    <div class="flex flex-col max-w-xl">
-      <div class="flex flex-col justify-center">
-        <h1 class="p-4 self-center text-3xl">Head and Tail Assigner</h1>
-        <p>
+  <div class="flex h-screen max-w-2xl">
+    <div class="flex flex-col">
+      <div class="flex flex-col">
+        <div class="flex flex-col">
+          <img
+            class="mx-auto w-2/5 rounded-lg m-6"
+            src="public\images\hta_logo.png"
+          />
+        </div>
+        <p class="">
           Assigns the head and tail atom position in a monomeric unit or in a
           polymerization reaction, both represented in SMILES string format.
         </p>
@@ -11,98 +16,6 @@
 
       <form @submit.prevent="sendInput()">
         <div class="flex flex-col self-start w-full mt-10 mb-10">
-          <div class="flex flex-col self-start">
-            <h1>Which database would you like to choose?</h1>
-          </div>
-          <div class="flex justify-start mt-3 space-x-4">
-            <div class="flex items-center">
-              <input
-                v-model="inputDB"
-                type="radio"
-                id="DBCheck1"
-                class=""
-                required
-                value="peptocodes"
-                @click="shouldShowDisclaimer = false"
-              />
-              <label
-                for="DBCheck1"
-                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
-                >peptocodes</label
-              >
-            </div>
-
-            <div class="flex">
-              <input
-                v-model="inputDB"
-                type="radio"
-                id="DBCheck2"
-                class=""
-                required
-                value="norine"
-                @click="shouldShowDisclaimer = true"
-              />
-              <label
-                for="DBCheck2"
-                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
-                >norine</label
-              >
-            </div>
-          </div>
-          <div
-            v-if="shouldShowDisclaimer"
-            id="text1"
-            class="flex flex-col text-xs self-start w-96 mt-2"
-          >
-            <p>
-              You are using Norine database which is freely available to
-              everybody.
-            </p>
-            <p>
-              Norine: update of the nonribosomal peptide resource. Nucleic Acids
-              Research, Nov. 2019, gkz1000, https://doi.org/10.1093/nar/gkz1000
-            </p>
-          </div>
-          <!-- <div>Checked: {{ inputCode }}</div> -->
-
-          <div class="flex flex-col self-start mt-3">
-            <h1>Which representation would you like to choose?</h1>
-          </div>
-
-          <div class="flex justify-start mt-3 space-x-4">
-            <div class="flex items-center">
-              <input
-                v-model="inputCode"
-                type="radio"
-                id="codeCheck1"
-                class=""
-                required
-                value="one letter code"
-              />
-              <label
-                for="codeCheck1"
-                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
-                >One letter code</label
-              >
-            </div>
-
-            <div class="flex">
-              <input
-                v-model="inputCode"
-                type="radio"
-                id="codeCheck2"
-                class=""
-                required
-                value="three letter code"
-              />
-              <label
-                for="codeCheck2"
-                class="block text-sm font-medium text-gray-900 dark:text-white select-none"
-                >Three letter code</label
-              >
-            </div>
-          </div>
-
           <div class="flex flex-col self-start mt-3">
             <h1>
               Would you like to run a one SMILES or a file with multiple SMILES?
@@ -169,10 +82,10 @@
 
             <form @submit.prevent="copyExample()">
               <div class="flex flex-col mt-8">
-                <div class="flex max-w-xl text-sm italic mb-2">
+                <div class="flex max-w-2xl self-center text-sm italic mb-2">
                   <p>
-                    You can use the following example to test the conversion to
-                    one letter code using the peptocodes database:
+                    You can use the following example to test head and tail
+                    assignment:
                   </p>
                 </div>
 
@@ -182,7 +95,7 @@
                     <input
                       class="self-center max-h-0.5 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       type="text"
-                      value="N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])([C@]([H])(O)C)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)O"
+                      value="OC=C"
                       id="myInput"
                       disabled
                       readonly
@@ -279,17 +192,15 @@ async function sendInput() {
 
   // Show the result to the user
   result.value = JSON.stringify(res);
-  output.value = res.result[0];
+  output.value = res.result;
   outputError.value = res.result[1];
 }
 
 const fetchSmiles = async () => {
   const server = "http://localhost:8080";
-  const route = `${server}/peptocodes`;
+  const route = `${server}/hta`;
   const body = {
     inputSmiles: inputSmiles.value,
-    inputCode: inputCode.value,
-    inputDB: inputDB.value,
     checkSmiles: checkSmiles.value,
   };
   console.log(body);
@@ -300,17 +211,6 @@ const fetchSmiles = async () => {
 
   return res;
 };
-
-function showDisclaimer() {
-  // console.log("TEST");
-  // console.log("INPUTDB: ", inputDB.value);
-
-  shouldShowDisclaimer.value = false;
-
-  if (inputDB.value) {
-    shouldShowDisclaimer.value = true;
-  }
-}
 
 function showInputBox() {
   // console.log("TEST");
@@ -348,4 +248,13 @@ async function copyExample() {
   // Alert the copied text
   alert("Copied the text: " + copyText.value);
 }
+
+useSeoMeta({
+  title: "HTA",
+  ogTitle: "HTA",
+  description:
+    "Assigns the head and tail atom position in a monomeric unit or in a polymerization reaction, both represented in SMILES string format",
+  ogDescription:
+    "Assigns the head and tail atom position in a monomeric unit or in a polymerization reaction, both represented in SMILES string format",
+});
 </script>
