@@ -232,7 +232,7 @@ const projectNames = ref([
   },
   {
     name: "Head and Tail Assign",
-    linkPath: "https://github.com/brendaferrari/HeadTailAssign",
+    linkPath: "/hta",
     linkImage: "images/hta_logo.png",
     about:
       "Assigns the head and tail atom position in a monomeric unit or in a polymerization reaction, both represented in SMILES string format",
@@ -283,5 +283,12 @@ onMounted(() => {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
   };
+});
+
+useSeoMeta({
+  title: "Main page",
+  ogTitle: "Main page",
+  description: "The main page of my website",
+  ogDescription: "The main page of my website",
 });
 </script>
