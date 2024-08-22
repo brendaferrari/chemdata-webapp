@@ -142,9 +142,14 @@
           <button
             type="submit"
             class="button self-center mb-12 bg-gray-200 dark:bg-gray-600 hover:bg-violet-300 dark:hover:bg-violet-500 rounded-lg w-24 h-8"
+            :class="{ 'btn-disabled': loading }"
+            :disabled="loading"
           >
             Submit
           </button>
+          <div v-if="loading">
+            <Loading></Loading>
+          </div>
         </div>
         <div class="flex justify-center" v-if="error">{{ error }}</div>
         <div class="flex flex-col self-center max-w-xl" v-if="result">
@@ -154,6 +159,7 @@
           <div class="flex self-center">
             {{ output }}
           </div>
+
           <div class="flex self-center">
             {{ outputError }}
           </div>
@@ -175,12 +181,13 @@ const outputError = ref();
 const shouldShowDisclaimer = ref(false);
 const shouldShowStringBox = ref(false);
 const shouldShowFileBox = ref(false);
+const loading = ref(false);
 
 async function sendInput() {
   // Result vars
   error.value = null;
   result.value = null;
-
+  console.log("aaaa");
   // Check if there is an error
   if (!inputSmiles.value) {
     error.value = "Please add your input.";
@@ -204,12 +211,17 @@ const fetchSmiles = async () => {
     checkSmiles: checkSmiles.value,
   };
   console.log(body);
-  const res = await $fetch(route, {
-    method: "POST",
-    body,
-  });
-
-  return res;
+  try {
+    loading.value = true;
+    const res = await $fetch(route, {
+      method: "POST",
+      body,
+    });
+    loading.value = false;
+    return res;
+  } catch (err) {
+    loading.value = false;
+  }
 };
 
 function showInputBox() {
@@ -258,3 +270,13 @@ useSeoMeta({
     "Assigns the head and tail atom position in a monomeric unit or in a polymerization reaction, both represented in SMILES string format",
 });
 </script>
+
+<style scoped>
+.btn-disabled {
+  @apply cursor-default bg-neutral-400 hover:bg-neutral-400;
+}
+
+.btn-disabled:active {
+  transform: translateY(0) !important;
+}
+</style>
