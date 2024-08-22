@@ -1,6 +1,6 @@
 <template>
-  <div class="flex h-screen max-w-2xl">
-    <div class="flex flex-col">
+  <div class="flex justify-center h-screen">
+    <div class="flex flex-col max-w-2xl">
       <div class="flex flex-col">
         <div class="flex flex-col">
           <img
