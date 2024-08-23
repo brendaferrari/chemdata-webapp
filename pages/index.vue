@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col">
-      <div class="bg-violet-100 dark:bg-violet-400 h-screen">
+      <div class="bg-violet-100 dark:bg-violet-400 max-h-fit">
         <div class="p-6">
           <img
             class="mx-auto rounded-full w-96 h-96"
@@ -53,7 +53,7 @@
             </button>
           </a>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center mb-4">
           <button
             type="button"
             onclick="smoothScroll(document.getElementById('second'))"
@@ -66,7 +66,7 @@
       </div>
 
       <div
-        class="flex flex-col second h-fit bg-violet-200 dark:bg-violet-300 p-2 lg:flex-row lg:h-screen"
+        class="flex flex-col second h-fit bg-violet-200 dark:bg-violet-300 p-2 lg:flex-row max-w-fit"
         id="second"
       >
         <div class="flex flex-col space-y-4 items-center basis-2/5 px-12 py-12">
@@ -140,9 +140,7 @@
         </div>
       </div>
 
-      <div
-        class="flex flex-col bg-violet-100 dark:bg-violet-400 p-8 h-fit lg:h-screen"
-      >
+      <div class="flex flex-col bg-violet-100 dark:bg-violet-400 p-8 max-h-fit">
         <h3
           class="flex justify-center dancing-script-font text-5xl px-12 py-12 not-prose dark:text-zinc-800"
         >
