@@ -7,11 +7,11 @@
       /></span> -->
       <span v-if="nextMode === 'light'"
         ><SunIcon
-          class="h-12 w-12 p-2 hover:bg-gray-200 dark:hover:bg-gray-800 md:flex"
+          class="h-12 w-12 p-1 hover:bg-gray-200 rounded dark:hover:bg-gray-800 md:flex"
       /></span>
       <span v-if="nextMode === 'dark'"
         ><MoonIcon
-          class="h-12 w-12 p-2 hover:bg-gray-200 dark:hover:bg-gray-800 md:flex"
+          class="h-12 w-12 p-1 hover:bg-gray-200 rounded dark:hover:bg-gray-800 md:flex"
       /></span>
     </button>
   </div>
