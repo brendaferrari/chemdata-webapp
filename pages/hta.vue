@@ -152,17 +152,29 @@
           </div>
         </div>
         <div class="flex justify-center" v-if="error">{{ error }}</div>
-        <div class="flex flex-col self-center max-w-xl" v-if="result">
-          <div class="flex self-center">
+        <div class="flex flex-col" v-if="result">
+          <div class="flex self-center mb-1">
             <h1>Results</h1>
           </div>
           <div class="flex self-center">
-            {{ output }}
+            <div>
+              {{ outputSimple }}
+            </div>
+          </div>
+          <div class="flex self-center mt-8 mb-1">
+            <h1>Full results</h1>
+          </div>
+          <div class="flex">
+            <div
+              class="bg-black rounded text-slate-200 text-sm p-4 h-44 overflow-y-auto"
+            >
+              {{ output }}
+            </div>
           </div>
 
-          <div class="flex self-center">
+          <!-- <div class="flex self-center">
             {{ outputError }}
-          </div>
+          </div> -->
         </div>
       </form>
     </div>
@@ -171,14 +183,12 @@
 
 <script setup>
 const inputSmiles = ref();
-const inputCode = ref();
-const inputDB = ref();
 const checkSmiles = ref();
 const error = ref(null);
 const result = ref(null);
 const output = ref(null);
+const outputSimple = ref(null);
 const outputError = ref();
-const shouldShowDisclaimer = ref(false);
 const shouldShowStringBox = ref(false);
 const shouldShowFileBox = ref(false);
 const loading = ref(false);
@@ -199,8 +209,11 @@ async function sendInput() {
 
   // Show the result to the user
   result.value = JSON.stringify(res);
+  // console.log(result.value.split(",").join("\r\n"));
   output.value = res.result;
-  outputError.value = res.result[1];
+  // console.log(typeof output.value);
+  outputSimple.value = res.result[30];
+  // outputError.value = res.result[1];
 }
 
 const fetchSmiles = async () => {
@@ -257,8 +270,8 @@ async function copyExample() {
   // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
 
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
+  // // Alert the copied text
+  // alert("Copied the text: " + copyText.value);
 }
 
 useSeoMeta({
