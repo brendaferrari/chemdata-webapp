@@ -36,7 +36,7 @@
             </button>
           </a>
           <a
-            href="https://www.linkedin.com/in/brenda-ferrari-b04bb2b4/"
+            href="https://www.linkedin.com/in/brenda-f-b04bb2b4/"
             target="_blank"
           >
             <button
