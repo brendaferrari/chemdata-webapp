@@ -1,6 +1,6 @@
 <template>
-  <div class="flex h-screen justify-center">
-    <div class="flex flex-col">
+  <div class="flex h-auto justify-center">
+    <div class="flex flex-col mb-48">
       <div class="flex flex-col justify-center">
         <h1 class="p-4 self-center text-3xl">PeptoCodes</h1>
         <p>
@@ -206,7 +206,7 @@
             <label
               for="input_file"
               class="flex justify-center mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Input file</label
+              >Input file (Under Development)</label
             >
             <input
               type="file"
