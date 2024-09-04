@@ -3,11 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "node .output/server/index.mjs",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "npm run build && git add -f .output .nuxt node_modules && eb deploy --staged && git reset"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
