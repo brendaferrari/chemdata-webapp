@@ -48,6 +48,6 @@ const props = defineProps({
 
 const handleClick = () => {
   const path = props.linkPath;
-  navigateToNewTab(path);
+  navigateTo(path);
 };
 </script>
