@@ -105,11 +105,13 @@
                   <div class="flex absolute mt-1 ml-28">
                     <!-- The button used to copy the text -->
                     <!-- # TODO UPDATE THE ALERT MESSAGE -->
-                    <button
-                      class="max-h-6 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border"
-                    >
-                      Copy
-                    </button>
+                    <TooltipClick text="Copied!">
+                      <button
+                        class="max-h-6 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border"
+                      >
+                        Copy
+                      </button>
+                    </TooltipClick>
                   </div>
                 </div>
               </div>
