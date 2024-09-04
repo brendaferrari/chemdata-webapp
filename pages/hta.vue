@@ -5,7 +5,7 @@
         <div class="flex flex-col">
           <img
             class="mx-auto w-2/5 rounded-lg m-6"
-            src="public\images\hta_logo.png"
+            src="public/images/hta_logo.png"
           />
         </div>
         <p class="">
@@ -209,7 +209,7 @@ async function sendInput() {
 
   // Show the result to the user
   result.value = JSON.stringify(res);
-  // console.log(result.value.split(",").join("\r\n"));
+  // console.log(result.value.split(",").join("/r/n"));
   output.value = res.result;
   // console.log(typeof output.value);
   outputSimple.value = res.result[30];
@@ -217,8 +217,9 @@ async function sendInput() {
 }
 
 const fetchSmiles = async () => {
-  const server = "http://localhost:8080";
-  const route = `${server}/hta`;
+  const config = useRuntimeConfig();
+  const domain = config.public.apiServer || "http://localhost:8080";
+  const route = `${domain}/hta`;
   const body = {
     inputSmiles: inputSmiles.value,
     checkSmiles: checkSmiles.value,

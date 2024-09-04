@@ -284,8 +284,9 @@ async function sendInput() {
 }
 
 const fetchSmiles = async () => {
-  const server = "http://localhost:8080";
-  const route = `${server}/peptocodes`;
+  const config = useRuntimeConfig();
+  const domain = config.public.apiServer || "http://localhost:8080";
+  const route = `${domain}/peptocodes`;
   const body = {
     inputSmiles: inputSmiles.value,
     inputCode: inputCode.value,
@@ -296,6 +297,9 @@ const fetchSmiles = async () => {
   const res = await $fetch(route, {
     method: "POST",
     body,
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 
   return res;
