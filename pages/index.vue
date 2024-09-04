@@ -224,7 +224,7 @@ const projectNames = ref([
   {
     name: "PeptoCodes",
     linkPath: "/peptocodes",
-    linkImage: "images/Peptocodes.png",
+    linkImage: "images/peptocodes.png",
     about:
       "To transform amino acid smiles to one letter code or three letter code",
   },
