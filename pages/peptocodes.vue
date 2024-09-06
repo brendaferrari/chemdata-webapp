@@ -315,27 +315,20 @@ const fetchSmiles = async () => {
     inputDB: inputDB.value,
     checkSmiles: checkSmiles.value,
   };
-  console.log(body);
   try {
     loading.value = true;
     const res = await $fetch(route, {
       method: "POST",
       body,
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     loading.value = false;
     return res;
   } catch (err) {
     loading.value = false;
   }
-  const res = await $fetch(route, {
-    method: "POST",
-    body,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  return res;
 };
 
 function showDisclaimer() {
