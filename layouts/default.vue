@@ -59,7 +59,7 @@ const modes = [lightMode, darkMode];
 const currentColorMode = computed(() => {
   const currentModeIndex = modes.indexOf(colorMode.preference);
 
-  return modes[currentModeIndex];
+  return modes[currentModeIndex] || lightMode;
 });
 
 useHead({
