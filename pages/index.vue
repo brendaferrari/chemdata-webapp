@@ -154,6 +154,7 @@
               :linkPath="projects.linkPath"
               :linkImage="projects.linkImage"
               :about="projects.about"
+              :newTab="projects.newTab || false"
             />
           </div>
         </div>
@@ -242,6 +243,7 @@ const projectNames = ref([
     linkImage: "images/autopadelpy_logo.png",
     about:
       "AutoPaDELPy provides an automated user interface for PaDELPy software.",
+    newTab: true,
   },
 
   {
@@ -250,6 +252,7 @@ const projectNames = ref([
     linkImage: "images/porcupine.png",
     about:
       "PORCUPINEplot is a script developed to automate the generation of porcupine plots of PCA analysis.",
+    newTab: true,
   },
 ]);
 

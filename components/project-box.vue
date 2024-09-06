@@ -44,10 +44,21 @@ const props = defineProps({
     required: true,
     default: "",
   },
+  newTab: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 
 const handleClick = () => {
   const path = props.linkPath;
-  navigateTo(path);
+  console.log("props.newTab: ", props.newTab);
+
+  if (props.newTab) {
+    return navigateToNewTab(path);
+  }
+
+  return navigateTo({ path });
 };
 </script>
