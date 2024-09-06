@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center h-auto">
-    <div class="flex flex-col max-w-2xl mb-48">
+  <div class="flex justify-center min-h-screen mt-10">
+    <div class="flex flex-col max-w-2xl">
       <div class="flex flex-col">
         <div class="flex flex-col">
           <img
@@ -13,7 +13,12 @@
           polymerization reaction, both represented in SMILES string format.
         </p>
       </div>
-
+      <div class="flex justify-center text-lg mt-14">
+        <Cog8ToothIcon class="self-center animate-spin h-7 w-7 md:flex" />
+        <p>Under Development</p>
+        <Cog8ToothIcon class="self-center animate-spin h-7 w-7 md:flex" />
+      </div>
+      <!-- 
       <form @submit.prevent="sendInput()">
         <div class="flex flex-col self-start w-full mt-10 mb-10">
           <div class="flex flex-col self-start mt-3">
@@ -90,9 +95,9 @@
                 </div>
 
                 <div class="flex justify-center">
-                  <div class="flex relative">
-                    <!-- The text field -->
-                    <input
+                  <div class="flex relative"> -->
+      <!-- The text field -->
+      <!-- <input
                       class="self-center max-h-0.5 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       type="text"
                       value="OC=C"
@@ -102,10 +107,10 @@
                     />
                   </div>
 
-                  <div class="flex absolute mt-1 ml-28">
-                    <!-- The button used to copy the text -->
-                    <!-- # TODO UPDATE THE ALERT MESSAGE -->
-                    <TooltipClick text="Copied!">
+                  <div class="flex absolute mt-1 ml-28"> -->
+      <!-- The button used to copy the text -->
+      <!-- # TODO UPDATE THE ALERT MESSAGE -->
+      <!-- <TooltipClick text="Copied!">
                       <button
                         class="max-h-6 text-gray-900 dark:text-gray-400 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 rounded-lg py-2 px-2.5 inline-flex items-center justify-center bg-white border-gray-200 border"
                       >
@@ -132,15 +137,15 @@
               disabled
             />
           </div>
-        </div>
-        <!-- #TODO: Delete archive tag -->
-        <!-- <div class="flex flex-col">
+        </div> -->
+      <!-- #TODO: Delete archive tag -->
+      <!-- <div class="flex flex-col">
         <img
           class="mx-auto w-3/5 rounded-lg m-6"
           src="~/assets/images/Peptocodes.png"
         />
       </div> -->
-        <div class="flex flex-col justify-center">
+      <!-- <div class="flex flex-col justify-center">
           <button
             type="submit"
             class="button self-center mb-12 bg-gray-200 dark:bg-gray-600 hover:bg-violet-300 dark:hover:bg-violet-500 rounded-lg w-24 h-8"
@@ -172,18 +177,20 @@
             >
               {{ output }}
             </div>
-          </div>
+          </div> -->
 
-          <!-- <div class="flex self-center">
+      <!-- <div class="flex self-center">
             {{ outputError }}
           </div> -->
-        </div>
-      </form>
+      <!-- </div>
+      </form> -->
     </div>
   </div>
 </template>
 
 <script setup>
+import { Cog8ToothIcon } from "@heroicons/vue/24/outline";
+
 const inputSmiles = ref();
 const checkSmiles = ref();
 const error = ref(null);
