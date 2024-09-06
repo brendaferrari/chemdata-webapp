@@ -231,9 +231,14 @@
           <button
             type="submit"
             class="button self-center mb-12 bg-gray-200 dark:bg-gray-600 hover:bg-violet-300 dark:hover:bg-violet-500 rounded-lg w-24 h-8"
+            :class="{ 'btn-disabled': loading }"
+            :disabled="loading"
           >
             Submit
           </button>
+          <div v-if="loading">
+            <Loading></Loading>
+          </div>
         </div>
         <div class="flex justify-center" v-if="error">{{ error }}</div>
         <div class="flex flex-col self-center max-w-xl" v-if="result">
@@ -266,6 +271,7 @@ const outputError = ref();
 const shouldShowDisclaimer = ref(false);
 const shouldShowStringBox = ref(false);
 const shouldShowFileBox = ref(false);
+const loading = ref(false);
 
 async function sendInput() {
   // Result vars
@@ -298,6 +304,17 @@ const fetchSmiles = async () => {
     checkSmiles: checkSmiles.value,
   };
   console.log(body);
+  try {
+    loading.value = true;
+    const res = await $fetch(route, {
+      method: "POST",
+      body,
+    });
+    loading.value = false;
+    return res;
+  } catch (err) {
+    loading.value = false;
+  }
   const res = await $fetch(route, {
     method: "POST",
     body,
