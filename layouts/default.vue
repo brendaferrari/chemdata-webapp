@@ -9,10 +9,20 @@
             to="/"
             class="flex p-2 hover:bg-gray-200 rounded dark:hover:bg-gray-800"
           >
-            <img
-              src="~/assets/images/icon.svg"
-              class="flex h-12 w-12 hover:bg-gray-200 dark:hover:bg-gray-800"
-            />
+            <div>
+              <div v-if="currentColorMode === lightMode">
+                <img
+                  src="~/assets/images/icon_lightmode.svg"
+                  class="flex h-12 w-12 hover:bg-gray-200 dark:hover:bg-gray-800"
+                />
+              </div>
+              <div v-else>
+                <img
+                  src="~/assets/images/icon_darkmode.svg"
+                  class="flex h-12 w-12 hover:bg-gray-200 dark:hover:bg-gray-800"
+                />
+              </div>
+            </div>
           </NuxtLink>
         </div>
       </div>
@@ -40,6 +50,16 @@
 </template>
 
 <script setup>
+const colorMode = useColorMode();
+const lightMode = "light";
+const darkMode = "dark";
+const modes = [lightMode, darkMode];
+const currentColorMode = computed(() => {
+  const currentModeIndex = modes.indexOf(colorMode.preference);
+
+  return modes[currentModeIndex];
+});
+
 useHead({
   titleTemplate: "%s - ChemData",
   link: [
