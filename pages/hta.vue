@@ -18,6 +18,18 @@
         <p>Under Development</p>
         <Cog8ToothIcon class="self-center animate-spin h-7 w-7 md:flex" />
       </div>
+      <div class="flex justify-center text-sm italic mt-3">
+        <p>
+          Please visit the
+          <a
+            href="https://github.com/brendaferrari/HeadTailAssign"
+            style="color: #005b96; text-decoration: none"
+            target="_blank"
+            >HTA page</a
+          >
+          to run HTA code locally
+        </p>
+      </div>
       <!-- 
       <form @submit.prevent="sendInput()">
         <div class="flex flex-col self-start w-full mt-10 mb-10">
