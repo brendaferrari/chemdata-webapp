@@ -1,11 +1,23 @@
 <template>
   <div class="flex h-auto justify-center">
-    <div class="flex flex-col mb-48">
+    <div class="flex flex-col mb-48 max-w-2xl">
       <div class="flex flex-col justify-center">
         <h1 class="p-4 self-center text-3xl">PeptoCodes</h1>
         <p>
           Transform amino acid smiles to one letter code or three letter code
           for later analysis.
+        </p>
+        <p class="text-xs italic mt-5">
+          At the moment this page allows to run one smiles at a time, if you
+          want to run in a batch please run PepToCodes locally on your computer.
+          Check
+          <a
+            href="https://github.com/brendaferrari/PepToCodes"
+            style="color: #005b96; text-decoration: none"
+            target="_blank"
+            >PepToCodes page</a
+          >
+          for instructions on how to run the code locally.
         </p>
       </div>
 
@@ -169,7 +181,7 @@
 
             <form @submit.prevent="copyExample()">
               <div class="flex flex-col mt-8">
-                <div class="flex max-w-xl text-sm italic mb-2">
+                <div class="flex text-sm italic mb-2">
                   <p>
                     You can use the following example to test the conversion to
                     one letter code using the peptocodes database:
