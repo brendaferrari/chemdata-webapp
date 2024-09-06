@@ -253,7 +253,7 @@
           </div>
         </div>
         <div class="flex justify-center" v-if="error">{{ error }}</div>
-        <div class="flex flex-col self-center max-w-xl" v-if="result">
+        <div class="flex flex-col self-center" v-if="result">
           <div class="flex self-center">
             <h1>Results</h1>
           </div>
