@@ -37,6 +37,8 @@
                 <a
                   class="link-color"
                   href="https://www.jyu.fi/en/people/hannu-hakkinen"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Prof. Dr. Hannu Häkkinen</a
                 >
               </span>
@@ -72,11 +74,15 @@
                 <a
                   class="link-color"
                   href="https://research.ibm.com/people/mathias-steiner"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Dr. Mathias Steiner</a
                 >, Advisor:
                 <a
                   class="link-color"
                   href="https://scholar.google.com/citations?user=VvSVNwQAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Dr. Ronaldo Giro</a
                 >
               </span>
@@ -90,7 +96,11 @@
                 and retrosynthesis with forward model Top-4 accuracy of 80% and
                 a backward model Top-4 accuracy of 60%. This result is on
                 preprint on
-                <a class="link-color" href="https://arxiv.org/abs/2310.11423"
+                <a
+                  class="link-color"
+                  href="https://arxiv.org/abs/2310.11423"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >ArXiv</a
                 >. Other results of this work are still being published.</span
               >
@@ -123,12 +133,16 @@
                 <a
                   class="link-color"
                   href="http://lattes.cnpq.br/0780841238637304"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Prof. Dr. Magaly Girão Albuquerque</a
                 >
                 and
                 <a
                   class="link-color"
                   href="http://lattes.cnpq.br/4430323583603846"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Prof. Dr. Camilo Henrique da Silva Lima</a
                 ></span
               >
@@ -169,6 +183,8 @@
                 <a
                   class="link-color"
                   href="http://lattes.cnpq.br/9152983185617827"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Dr. Núbia Boechat</a
                 ></span
               >
@@ -216,12 +232,16 @@
                   <a
                     class="link-color"
                     href="http://lattes.cnpq.br/0780841238637304"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >Prof. Dr. Magaly Girão Albuquerque</a
                   >
                   and
                   <a
                     class="link-color"
                     href="http://lattes.cnpq.br/4430323583603846"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >Prof. Dr. Camilo Henrique da Silva Lima</a
                   >
                 </span>
@@ -237,6 +257,8 @@
                   <a
                     class="link-color"
                     href="https://www.tandfonline.com/eprint/ASHIAGZUWMFHBSAQWUCD/full?target=10.1080/07391102.2023.2231546"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >Journal of Biomolecular Structure and Dynamics</a
                   >. Other results of this work are still being published.
                 </span>
@@ -269,6 +291,8 @@
                   <a
                     class="link-color"
                     href="http://lattes.cnpq.br/9152983185617827"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >Dr. Núbia Boechat</a
                   ></span
                 >
@@ -288,6 +312,8 @@
                   <a
                     class="link-color"
                     href="https://proceedings.science/brazmedchem-2019/trabalhos/new-isatin-derivatives-analogues-of-efavirenz-as-hiv-1-inhibitors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >9th Brazilian Symposium on Medicinal Chemistry</a
                   >.
                 </span>
@@ -322,6 +348,8 @@
                   <a
                     class="link-color"
                     href="http://lattes.cnpq.br/3114105343647059"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >Prof. Dr. Mauro Cesar Dias</a
                   ></span
                 >
