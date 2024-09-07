@@ -25,6 +25,7 @@
             href="https://github.com/brendaferrari/HeadTailAssign"
             style="color: #005b96; text-decoration: none"
             target="_blank"
+            rel="noopener noreferrer"
             >HTA page</a
           >
           to run HTA code locally

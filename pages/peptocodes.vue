@@ -15,6 +15,7 @@
             href="https://github.com/brendaferrari/PepToCodes"
             style="color: #005b96; text-decoration: none"
             target="_blank"
+            rel="noopener noreferrer"
             >PepToCodes page</a
           >
           for instructions on how to run the code locally.

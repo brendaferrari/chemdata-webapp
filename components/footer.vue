@@ -23,7 +23,11 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
       />
-      <a href="https://github.com/brendaferrari" target="_blank">
+      <a
+        href="https://github.com/brendaferrari"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <button class="">
           <i class="fab fa-github mr-1 fa-lg"></i>
         </button>
@@ -31,12 +35,17 @@
       <a
         href="https://www.linkedin.com/in/brenda-ferrari-b04bb2b4/"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <button class="">
           <i class="fab fa-linkedin mr-1 fa-lg"></i>
         </button>
       </a>
-      <a href="https://orcid.org/0000-0001-5609-0947" target="_blank">
+      <a
+        href="https://orcid.org/0000-0001-5609-0947"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <button class="">
           <i class="fab fa-orcid mr-1 fa-lg"></i>
         </button>

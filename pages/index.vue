@@ -28,7 +28,11 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
           />
 
-          <a href="https://github.com/brendaferrari" target="_blank">
+          <a
+            href="https://github.com/brendaferrari"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               class="bg-black hover:bg-slate-800 rounded-lg text-white text-s text-center self-center px-3 py-2 my-2 mx-2"
             >
@@ -38,6 +42,7 @@
           <a
             href="https://www.linkedin.com/in/brenda-f-b04bb2b4/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <button
               class="bg-blue-800 hover:bg-blue-700 rounded-lg text-white text-s text-center self-center px-3 py-2 my-2 mx-2"
@@ -45,7 +50,11 @@
               <i class="fab fa-linkedin mr-1"></i> LinkedIn
             </button>
           </a>
-          <a href="https://orcid.org/0000-0001-5609-0947" target="_blank">
+          <a
+            href="https://orcid.org/0000-0001-5609-0947"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               class="bg-lime-600 hover:bg-lime-500 rounded-lg text-white text-s text-center self-center px-3 py-2 my-2 mx-2"
             >

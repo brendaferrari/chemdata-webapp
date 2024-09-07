@@ -9,7 +9,11 @@
           :key="repository.id"
           class="border border-gray-200 dark:border-gray-800 rounded-sm p-4 hover:bg-gray-200 dark:hover:bg-gray-800 font-mono"
         >
-          <a :href="repository.html_url" target="_blank">
+          <a
+            :href="repository.html_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div class="flex items-center justify-between text-sm">
               <div class="font-semibold">{{ repository.name }}</div>
               <div>{{ repository.stargazers_count }} ★</div>
