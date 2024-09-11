@@ -46,7 +46,7 @@ for mol in supplier:
 
 And the molecules was generated as it follows:
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/interactive-plot-for-molecules/interactive-plot.png?raw=true" alt>
+<img class="center-img" src="/images/blog/2021/interactive-plot-for-molecules/interactive-plot.png" alt>
 <p class="center-txt">Molecules generated using images.py</p>
 
 With the compound images generated, all I had to do was to plot some information. As the purpose of this exercice was not to study any property, I just used **random.randint** to generate some random data.
@@ -107,9 +107,9 @@ show(p)
 
 And then its done!
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/interactive-plot-for-molecules/interactive_plot.gif?raw=true" alt
-    width="800" 
-    height="600">
+<img class="center-img" src="/images/blog/2021/interactive-plot-for-molecules/interactive_plot.gif" alt
+    width="600" 
+    height="400">
 
 <p class="center-txt" >Plot generated using interactive_plot.py</p>
 

@@ -29,10 +29,10 @@ To visualize the protein you may use [PyMOL](https://pymol.org/2/) and for MD si
 
 If in the process of visualization, your protein seems broken, fragmented or have residues stretched out, don't panic (not yet!). This could be a [Periodic Boundary Condition situation](https://manual.gromacs.org/current/reference-manual/algorithms/periodic-boundary-conditions.html). You may refer to some people describing this situation over [here](https://www.researchgate.net/post/Why_is_my_protein_broken_down_during_molecular_dynamics_simulation) and [here](https://www.researchgate.net/post/How-to-remove-GROMACS-periodic-boundary-conditions).
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/pbc.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/pbc.png" alt
     width="400" 
     height="300">
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/fragment.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/fragment.png" alt
     width="400" 
     height="300">
 
@@ -56,13 +56,13 @@ I am going to use the QTGrace to plot all the graphs in this tutorial. Since it 
 
 This step is also explained in the [tutorial](https://www.youtube.com/watch?v=wIgIadhHGPQ&t=428s), but i thought it would be great to enphasize it here: Using the tool transform it is possible to run the averages. The number you are going to put on lenght of average depend on which average you wish to study, for me I stuck with 10 ps, so I selected 10 on lenght of average. And then, that is it! It was more simple than I expected it to be.
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/grace_transformation.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/grace_transformation.png" alt
     width="300" 
     height="300">
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/grace_transformation1.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/grace_transformation1.png" alt
     width="300" 
     height="300">
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/pressure.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/pressure.png" alt
     width="400" 
     height="300">
 
@@ -72,7 +72,7 @@ This step is also explained in the [tutorial](https://www.youtube.com/watch?v=wI
 
 This is how your movie simulation may be looking (visualization using UCSF Chimera, tutorial over [here](https://www.youtube.com/watch?v=_-PVNYgz0gU) and [here](https://www.youtube.com/watch?v=AfcaEauzYqk). In summary, to visualize the movie just go to tools>MD/Ensemble Analysis>MD Movie):
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/simulation.gif?raw=true" alt>
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/simulation.gif" alt>
 <p class="center-txt">MD Simulation</p>
 
 To understand better how your system is behaving through the simulation it is important to analyze some properties of the dynamics: [RMSD](https://manual.gromacs.org/current/onlinehelp/gmx-rms.html), [RMSF](https://manual.gromacs.org/current/onlinehelp/gmx-rmsf.html), [Rg](https://manual.gromacs.org/current/onlinehelp/gmx-gyrate.html). It is not the scope of this tutorial to explain this concepts, so feel free to read a bit about it and come back after understanding a little bit more.
@@ -91,13 +91,13 @@ gmx rms -s em.tpr -f md_0_1_noPBC.xtc -o rmsd_xtal.xvg -tu ns
 
 Which option you are going to choose between those two and between the options presented on group for least squares it and group or RMSD calculation, will depend on what kind of analysis you want to do. The RMSD of the system will be larger and will be interesting to analyze when you want to study the big picture. The RMSD of the c-alpha or the protein is the inverse.
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_sys.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/rmsd_sys.png" alt
     width="400" 
     height="300">
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_pro.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/rmsd_pro.png" alt
     width="400" 
     height="300">
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsd_ca.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/rmsd_ca.png" alt
     width="400" 
     height="300">
 
@@ -121,7 +121,7 @@ gmx rmsf -f md_0_1_noPBC.xtc -s md_0_1.tpr -o rmsf.xvg -res
 
 As for the other analysis, you may to choose which group gmx will use to calculate de RMSF, in this tutorial I also choose C-alpha:
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rmsf_ca.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/rmsf_ca.png" alt
     width="400" 
     height="300">
 
@@ -137,7 +137,7 @@ gmx gyrate -s md_0_1.tpr -f md_0_1_noPBC.xtc -o gyrate.xvg
 
 As for the other analysis, you may to choose which group gmx will use to calculate de Rg, in this tutorial I also choose C-alpha:
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/rg.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/rg.png" alt
     width="400" 
     height="300">
 
@@ -157,7 +157,7 @@ gmx cluster -f md_0_1_noPBC.xtc -s md_0_1.tpr -cl md_0_1.pdb -g cluster.log
 
 The file "cluster.log" has all the necessary information to analyze the clusters. In the table shown in the next figure, the important things to look for is: cl. represents the cluster number, #st represents the number of frames that are group in that cluster and middle rmsd, which is going to give to you the frame that is the median of all the clusters grouped in that group. In this case, the simulation could not generate clusters with more that one frame in each cluster, this could happen.
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/clusterex.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/clusterex.png" alt
     width="400" 
     height="300">
 
@@ -165,7 +165,7 @@ The file "cluster.log" has all the necessary information to analyze the clusters
 
 So, I got another example here in the next picture. In this case, the cluster number 682 has 248 frames in which frame number 76930 is the median of all the frames grouped in this cluster. So, this is the one frame you are going to get to represent your simulation, if this cluster has the most amount of frames grouped in it. If another cluster has 300 frames, you are going to get the other one. Got it? Just look for the higher amount of frames in a cluster!
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/clusterfull.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/clusterfull.png" alt
     width="400" 
     height="300">
 
@@ -191,7 +191,7 @@ align start, end
 
 So, after that I get the following image:
 
-<img class="center-img" src="https://github.com/brendaferrari/chemdata/blob/master/_posts/gromacs_tutorial/align.png?raw=true" alt
+<img class="center-img" src="/images/blog/2022/gromacs_tutorial/align.png" alt
     width="400" 
     height="400">
 
