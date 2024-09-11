@@ -145,7 +145,7 @@
               width="100"
               height="100"
             />
-            <div class="thought">Always learning...</div>
+            <div class="thought cursor-default">Always learning...</div>
           </div>
         </div>
       </div>
