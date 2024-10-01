@@ -44,22 +44,41 @@ const handlePeptocodes = (body: SeqAA) => {
   return runPepToCodes(body);
 };
 
+const sendError = (event: any, status: number, error: string) => {
+  setResponseStatus(event, status);
+  return {
+    status: status,
+    error: error,
+  };
+};
+
+const sendResponse = (event: any, response: any) => {
+  return {
+    ...response,
+  };
+};
+
 export default defineEventHandler(async (event) => {
   try {
     const body: SeqAA = await readBody(event);
+
+    if (
+      !body ||
+      !body.inputDB ||
+      !body.inputCode ||
+      !body.checkSmiles ||
+      !body.inputSmiles
+    ) {
+      return sendError(event, 400, "Bad Request: Missing required fields");
+    }
+
     const result = await handlePeptocodes(body);
 
-    return {
+    return sendResponse(event, {
       result,
-    };
+    });
   } catch (error) {
     console.error(error);
-    const status = 500;
-
-    setResponseStatus(event, status);
-    return {
-      status: status,
-      error: "Internal Server Error",
-    };
+    return sendError(event, 500, "Internal Server Error");
   }
 });
