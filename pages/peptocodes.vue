@@ -308,8 +308,7 @@ async function sendInput() {
 
 const fetchSmiles = async () => {
   const config = useRuntimeConfig();
-  const domain = config.public.apiServer || "http://localhost:8080";
-  const route = `${domain}/peptocodes`;
+  const route = `/api/peptocodes`;
   const body = {
     inputSmiles: inputSmiles.value,
     inputCode: inputCode.value,

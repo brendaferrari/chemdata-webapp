@@ -18,6 +18,7 @@
     "@heroicons/vue": "^2.1.1",
     "nuxt": "^3.10.3",
     "oh-vue-icons": "^1.0.0-rc3",
+    "python-shell": "^5.0.0",
     "tw-elements": "^2.0.0",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"

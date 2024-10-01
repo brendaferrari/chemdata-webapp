@@ -240,8 +240,7 @@ async function sendInput() {
 
 const fetchSmiles = async () => {
   const config = useRuntimeConfig();
-  const domain = config.public.apiServer || "http://localhost:8080";
-  const route = `${domain}/hta`;
+  const route = `/api/hta`;
   const body = {
     inputSmiles: inputSmiles.value,
     checkSmiles: checkSmiles.value,
